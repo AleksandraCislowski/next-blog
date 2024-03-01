@@ -11,7 +11,7 @@ function Hero() {
         width={300}
         height={300}
       />
-      <h1>Hello, I'm Aleksandra!</h1>
+      <h1>Hello, my name is Aleksandra!</h1>
       <p>I might be even blogging something here!</p>
     </section>
   );
