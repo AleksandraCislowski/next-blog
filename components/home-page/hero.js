@@ -7,7 +7,7 @@ function Hero() {
       <Image
         className={classes.image}
         src='/images/site/me.jpg'
-        alt='An image showing Alex'
+        alt='An image showing Aleksandra'
         width={300}
         height={300}
       />
