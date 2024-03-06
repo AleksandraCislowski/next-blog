@@ -6,17 +6,14 @@ async function handler(req, res) {
 
     if (
       !email ||
-      email
-        .toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        ) ||
+      !email.includes("@") ||
       !name ||
       name.trim() === "" ||
       !message ||
       message.trim() === ""
     ) {
       res.status(422).json({ message: "Invalid input" });
+      return;
     }
     const newMessage = {
       email,
@@ -41,6 +38,7 @@ async function handler(req, res) {
     } catch (error) {
       client.close();
       res.status(500).json({ message: "Storing message failed!" });
+      return;
     }
 
     client.close();
@@ -48,6 +46,7 @@ async function handler(req, res) {
     res
       .status(201)
       .json({ message: "Successfully stored message!", message: newMessage });
+    return res;
   }
 }
 
