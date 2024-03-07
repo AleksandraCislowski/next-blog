@@ -12,7 +12,7 @@ function Hero() {
         height={300}
       />
       <h1>Hello, my name is Aleksandra!</h1>
-      <p>I might be even blogging something here!</p>
+      <p>I blog about my travels.</p>
     </section>
   );
 }
