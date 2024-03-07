@@ -17,3 +17,6 @@ function Logo() {
 }
 
 export default Logo;
+
+// Icon source:
+// 'https://www.flaticon.com/free-icons/travel'
