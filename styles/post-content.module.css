@@ -15,8 +15,13 @@
 
 .content .image {
   margin: var(--size-4) auto;
-  width: 100%;
+  width: 90%;
   max-width: 600px;
+  overflow: hidden;
+}
+
+.content .image img {
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
