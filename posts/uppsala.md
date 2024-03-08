@@ -1,5 +1,5 @@
 ---
-title: "Uppsala"
+title: "Uppsala (Sweden)"
 date: "2022-06-11"
 image: uppsala1.jpg
 excerpt: Uppsala is the fourth-largest city in Sweden. Located 71km north of the capital Stockholm, had 177 074 inhabitants in 2019.

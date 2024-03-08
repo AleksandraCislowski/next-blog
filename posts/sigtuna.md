@@ -1,5 +1,5 @@
 ---
-title: "Sigtuna"
+title: "Sigtuna (Sweden)"
 date: "2022-07-24"
 image: sigtuna1.jpg
 excerpt: Sigtuna is a locality situated in the eponymous Sigtuna Municipality, in Stockholm County in Sweden, with 9689 inhabitants in 2020.
