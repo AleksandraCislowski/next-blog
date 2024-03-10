@@ -21,3 +21,5 @@ Backend is located on http://localhost:8080
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+
+Based on a learning materials from a course by @academind
