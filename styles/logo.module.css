@@ -12,6 +12,12 @@
   padding: 0.5rem;
 }
 
+.logo h4:hover,
+.logo h4:active,
+.logo h4.active {
+  color: var(--color-grey-200);
+}
+
 @media (min-width: 768px) {
   .logo {
     font-size: var(--size-8);
