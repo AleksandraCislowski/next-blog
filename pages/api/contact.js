@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+import { sendMail } from "../../service/mailService";
 
 async function handler(req, res) {
   if (req.method === "POST") {
@@ -35,6 +36,13 @@ async function handler(req, res) {
     try {
       const result = await db.collection("blog-messages").insertOne(newMessage);
       newMessage.id = result.insertedId;
+      if (result) {
+        await sendMail(
+          `${name} sent you a message.`,
+          "yenna91@gmail.com",
+          `${message} from ${email}`
+        );
+      }
     } catch (error) {
       client.close();
       res.status(500).json({ message: "Storing message failed!" });
