@@ -1,10 +1,3 @@
-# Alex's travel blog!
-
-Feel free to visit my travel blog!
-https://aleksandra-travel-blog.vercel.app
-
-If you want, you can send me a message through a contact form! Looking forward to hearing from you!
-
 
 ## Available Scripts
 
