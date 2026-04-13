@@ -1,12 +1,12 @@
 .header {
   width: 100%;
-  height: 6rem;
+  height: 4.75rem;
   background-color: var(--navigation-background);
   border-bottom: 1px solid var(--navigation-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 8%;
 }
 
 .header ul {
