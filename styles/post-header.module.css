@@ -1,37 +1,89 @@
 .header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--size-6);
+  margin-bottom: var(--size-8);
   padding-bottom: var(--size-8);
-  border-bottom: 8px solid var(--color-primary-100);
-  margin: var(--size-4) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+}
+
+.copy {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--color-clay);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .header h1 {
   font-size: var(--size-8);
-  color: var(--color-primary-500);
+  color: var(--color-moss);
   margin: 0;
-  line-height: initial;
-  text-align: center;
+  line-height: 1.05;
 }
 
-.header img {
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-2);
+  color: var(--color-grey-600);
+  font-weight: 700;
+}
+
+.meta span::before {
+  content: "/";
+  margin-right: var(--size-2);
+  color: var(--color-sage);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tags li {
+  border: 1px solid color-mix(in srgb, var(--color-sage) 45%, transparent);
+  border-radius: 999px;
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: var(--size-1) var(--size-3);
+}
+
+.image {
+  position: relative;
+  min-height: 18rem;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--color-mist);
+}
+
+.image img {
   object-fit: cover;
-  width: 200px;
-  height: 120px;
 }
 
 @media (min-width: 768px) {
   .header {
-    margin: var(--size-8) 0;
-    flex-direction: row;
-    align-items: flex-end;
+    grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 1fr);
+    align-items: center;
+    gap: var(--size-8);
   }
 
   .header h1 {
     font-size: var(--size-16);
-    text-align: left;
+  }
+
+  .image {
+    min-height: 26rem;
   }
 }

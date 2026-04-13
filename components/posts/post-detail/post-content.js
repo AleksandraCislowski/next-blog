@@ -5,24 +5,24 @@ import ReactMarkdown from "react-markdown";
 
 function PostContent(props) {
   const { post } = props;
-  const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
   const customRenderers = {
     p(paragraph) {
       const { node } = paragraph;
 
-      if (node.children[0].tagName === "img") {
+      if (node.children[0]?.tagName === "img") {
         const image = node.children[0];
+        const imageAlt = image.properties.alt || image.alt || "";
 
         return (
           <div className={classes.image}>
             <Image
               src={`/images/posts/${post.slug}/${image.properties.src}`}
-              alt={image.alt}
-              width={500}
-              height={300}
-              layout='responsive'
+              alt={imageAlt}
+              fill
+              sizes='(min-width: 768px) 46rem, 100vw'
             />
+            {imageAlt && <span>{imageAlt}</span>}
           </div>
         );
       }
@@ -32,8 +32,10 @@ function PostContent(props) {
 
   return (
     <article className={classes.content}>
-      <PostHeader title={post.title} image={imagePath} />
-      <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
+      <PostHeader post={post} />
+      <div className={classes.body}>
+        <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
+      </div>
     </article>
   );
 }

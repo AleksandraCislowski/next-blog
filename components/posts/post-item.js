@@ -3,6 +3,7 @@ import Image from "next/image";
 import classes from "../../styles/post-item.module.css";
 
 function PostItem(props) {
+  const { priority = false } = props;
   const { title, image, imagePath, excerpt, date, slug, location, readingTime, tags, tripType } =
     props.post;
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -24,6 +25,8 @@ function PostItem(props) {
             src={postImagePath}
             alt={title}
             fill
+            priority={priority}
+            unoptimized
             sizes='(min-width: 1024px) 31vw, (min-width: 640px) 45vw, 100vw'
           />
         </div>

@@ -2,12 +2,37 @@ import Image from "next/image";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
-  const { title, image } = props;
+  const { post } = props;
+  const { title, imagePath, location, date, readingTime, tripType, tags } = post;
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const place = [location?.city, location?.country].filter(Boolean).join(", ");
+  const visibleTags = tags?.slice(0, 4) || [];
 
   return (
     <header className={classes.header}>
-      <h1>{title}</h1>
-      <Image src={image} alt={title} width={200} height={150} />
+      <div className={classes.copy}>
+        <p className={classes.kicker}>{place || "Travel note"}</p>
+        <h1>{title}</h1>
+        <div className={classes.meta}>
+          <time>{formattedDate}</time>
+          {readingTime && <span>{readingTime} min read</span>}
+          {tripType && <span>{tripType}</span>}
+        </div>
+        {visibleTags.length > 0 && (
+          <ul className={classes.tags} aria-label={`Tags for ${title}`}>
+            {visibleTags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className={classes.image}>
+        <Image src={imagePath} alt={title} fill priority sizes='(min-width: 768px) 42vw, 100vw' />
+      </div>
     </header>
   );
 }
