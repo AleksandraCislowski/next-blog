@@ -2,8 +2,8 @@
   text-transform: uppercase;
   font-size: var(--size-5);
   font-weight: bold;
-  font-family: "Oswald", sans-serif;
-  color: var(--color-grey-50);
+  font-family: var(--font-heading);
+  color: var(--navigation-foreground);
   display: flex;
   align-items: center;
 }
@@ -15,7 +15,7 @@
 .logo h4:hover,
 .logo h4:active,
 .logo h4.active {
-  color: var(--color-grey-200);
+  color: var(--navigation-link-hover);
 }
 
 @media (min-width: 768px) {

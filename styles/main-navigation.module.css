@@ -1,7 +1,8 @@
 .header {
   width: 100%;
   height: 6rem;
-  background-color: var(--color-grey-900);
+  background-color: var(--navigation-background);
+  border-bottom: 1px solid var(--navigation-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,14 +22,15 @@
 }
 
 .header a {
-  color: var(--color-grey-100);
+  color: var(--navigation-link);
   font-size: var(--size-4);
+  font-weight: 600;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: var(--color-grey-200);
+  color: var(--navigation-link-hover);
 }
 
 @media (min-width: 768px) {

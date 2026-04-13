@@ -1,0 +1,46 @@
+:root {
+  --font-heading: "Fraunces", "Inter", serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-ink: #1f2523;
+  --color-paper: #f7f4ee;
+  --color-mist: #dfe7e2;
+  --color-sage: #6f8f7b;
+  --color-moss: #33483d;
+  --color-clay: #b7624f;
+  --color-sun: #e4b363;
+  --color-ocean: #2f6f7e;
+
+  --color-grey-50: var(--color-paper);
+  --color-grey-100: var(--color-mist);
+  --color-grey-200: #b7c7bd;
+  --color-grey-300: var(--color-sage);
+  --color-grey-400: #587263;
+  --color-grey-500: var(--color-paper);
+  --color-grey-600: #4b5f55;
+  --color-grey-700: var(--color-moss);
+  --color-grey-800: #26382f;
+  --color-grey-900: var(--color-ink);
+
+  --color-primary-50: #fff8ed;
+  --color-primary-100: var(--color-sun);
+  --color-primary-200: #d98963;
+  --color-primary-300: #cc765b;
+  --color-primary-400: var(--color-clay);
+  --color-primary-500: #934936;
+  --color-primary-600: #6e372b;
+  --color-primary-700: var(--color-moss);
+
+  --color-success-100: #a2f0bc;
+  --color-success-500: #12bd4b;
+
+  --color-error-100: #f1acc9;
+  --color-error-500: #a10c4a;
+
+  --navigation-background: var(--color-moss);
+  --navigation-foreground: var(--color-paper);
+  --navigation-link: var(--color-mist);
+  --navigation-link-hover: var(--color-sun);
+  --navigation-link-active: var(--color-clay);
+  --navigation-border: color-mix(in srgb, var(--color-paper) 14%, transparent);
+}
