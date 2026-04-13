@@ -2,6 +2,18 @@
 title: "Castro Marim (Portugal)"
 date: "2023-01-02"
 image: castro1.jpg
+city: Castro Marim
+country: Portugal
+region: Algarve
+coordinates:
+  lat: 37.2207
+  lng: -7.4435
+tripType: historic town walk
+tags:
+  - Portugal
+  - Algarve
+  - fortress
+  - medieval history
 excerpt: Castro Marim is a town and a municipality in the southern region of Algarve, in Portugal.
 isFeatured: false
 ---

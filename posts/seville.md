@@ -2,6 +2,18 @@
 title: "Seville (Spain)"
 date: "2023-01-05"
 image: seville1.jpg
+city: Seville
+country: Spain
+region: Andalusia
+coordinates:
+  lat: 37.3891
+  lng: -5.9845
+tripType: city break
+tags:
+  - Spain
+  - Andalusia
+  - architecture
+  - plazas
 excerpt: This is the capital and largest city of the Spanish autonomous community of Andalusia and the province of Seville. It is situated on the lower reaches of the River Guadalquivir, in the southwest of the Iberian Peninsula.
 isFeatured: true
 ---

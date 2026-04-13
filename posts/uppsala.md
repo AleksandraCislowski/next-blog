@@ -2,6 +2,18 @@
 title: "Uppsala (Sweden)"
 date: "2022-06-11"
 image: uppsala1.jpg
+city: Uppsala
+country: Sweden
+region: Uppsala County
+coordinates:
+  lat: 59.8586
+  lng: 17.6389
+tripType: city break
+tags:
+  - Sweden
+  - university city
+  - history
+  - cathedral
 excerpt: Uppsala is the fourth-largest city in Sweden. Located 71km north of the capital Stockholm, had 177 074 inhabitants in 2019.
 isFeatured: true
 ---

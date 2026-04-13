@@ -2,6 +2,18 @@
 title: "Aracena (Spain)"
 date: "2022-12-27"
 image: aracena1.jpg
+city: Aracena
+country: Spain
+region: Andalusia
+coordinates:
+  lat: 37.8936
+  lng: -6.5612
+tripType: heritage day trip
+tags:
+  - Spain
+  - Andalusia
+  - castles
+  - caves
 excerpt: Aracena is the largest town in the Parque Natural Sierra de Aracena y Picos de Aroche. In 2006, Aracena was named a Tourist Municipality of Andalucía and became the first town in the province of Huelva to achieve this status.
 isFeatured: true
 ---

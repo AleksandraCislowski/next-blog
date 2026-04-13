@@ -2,6 +2,18 @@
 title: "Vila Real de Santo António (Portugal)"
 date: "2023-01-02"
 image: vila1.jpg
+city: Vila Real de Santo António
+country: Portugal
+region: Algarve
+coordinates:
+  lat: 37.195
+  lng: -7.4177
+tripType: coastal town walk
+tags:
+  - Portugal
+  - Algarve
+  - coastal town
+  - sunset
 excerpt: Vila Real de Santo António was founded after the 1755 Lisbon earthquake, and largely expanded in 1774 using the same architectural and construction techniques employed in the reconstruction of Lisbon after the disaster.
 isFeatured: true
 ---

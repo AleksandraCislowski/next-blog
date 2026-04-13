@@ -2,6 +2,18 @@
 title: "Świeradów-Zdrój (Poland)"
 date: "2023-07-05"
 image: zdroj1.jpg
+city: Świeradów-Zdrój
+country: Poland
+region: Lower Silesia
+coordinates:
+  lat: 50.9092
+  lng: 15.3431
+tripType: mountain spa escape
+tags:
+  - Poland
+  - mountains
+  - spa town
+  - slow travel
 excerpt: It is a spa town in Lubań County, Lower Silesian Voivodeship, in south-western Poland near the border with the Czech Republic. The town is located in the Kwisa valley of the Jizera Mountains, a part of the Sudetes range.
 isFeatured: false
 ---

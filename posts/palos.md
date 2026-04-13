@@ -2,6 +2,18 @@
 title: "Palos (Spain)"
 date: "2022-12-29"
 image: palos1.jpg
+city: Palos de la Frontera
+country: Spain
+region: Andalusia
+coordinates:
+  lat: 37.2346
+  lng: -6.8947
+tripType: history stop
+tags:
+  - Spain
+  - Andalusia
+  - maritime history
+  - museums
 excerpt: Palos de la Frontera is most famous for being the place from which Columbus set sail in 1492, eventually reaching America.
 isFeatured: false
 ---

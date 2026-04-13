@@ -2,6 +2,18 @@
 title: "Huelva (Spain)"
 date: "2022-12-23"
 image: huelva1.jpg
+city: Huelva
+country: Spain
+region: Andalusia
+coordinates:
+  lat: 37.2614
+  lng: -6.9447
+tripType: city break
+tags:
+  - Spain
+  - Andalusia
+  - city break
+  - coastal city
 excerpt: Huelva is a municipality of Spain and the capital of the province of Huelva, in the autonomous community of Andalusia.
 isFeatured: true
 ---

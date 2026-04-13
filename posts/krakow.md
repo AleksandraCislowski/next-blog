@@ -2,6 +2,18 @@
 title: "Kraków/Cracow (Poland)"
 date: "2023-06-27"
 image: krakow1.jpg
+city: Kraków
+country: Poland
+region: Lesser Poland
+coordinates:
+  lat: 50.0647
+  lng: 19.945
+tripType: city break
+tags:
+  - Poland
+  - city break
+  - history
+  - architecture
 excerpt: Kraków is the second-largest and one of the oldest cities in Poland. Situated on the Vistula River in Lesser Poland Voivodeship, the city dates back to the seventh century. It was the official capital of Poland until 1596.
 isFeatured: true
 ---
