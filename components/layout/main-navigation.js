@@ -1,22 +1,56 @@
+import { useState } from "react";
 import Logo from "./logo";
 import Link from "next/link";
 import classes from "../../styles/main-navigation.module.css";
 
 function MainNavigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsMenuOpen((currentState) => !currentState);
+  }
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
   return (
     <header className={classes.header}>
-      <Link href='/' legacyBehavior>
-        <a>
-          <Logo />
-        </a>
+      <Link href='/' className={classes.brandLink} aria-label='Elsewhere Log home'>
+        <Logo />
       </Link>
-      <nav>
+      <button
+        className={classes.menuButton}
+        type='button'
+        aria-label='Toggle navigation menu'
+        aria-controls='main-navigation'
+        aria-expanded={isMenuOpen}
+        onClick={toggleMenu}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <nav
+        id='main-navigation'
+        className={`${classes.navigation} ${isMenuOpen ? classes.open : ""}`}
+        aria-label='Main navigation'
+      >
         <ul>
           <li>
-            <Link href='/posts'>All Notes</Link>
+            <Link href='/#featured-notes' onClick={closeMenu}>
+              Featured
+            </Link>
           </li>
           <li>
-            <Link href='/contact'>Contact</Link>
+            <Link href='/posts' onClick={closeMenu}>
+              All Notes
+            </Link>
+          </li>
+          <li>
+            <Link href='/contact' onClick={closeMenu}>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>

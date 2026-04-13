@@ -13,7 +13,7 @@ function Logo() {
         height={80}
         priority
       />
-      <h4>Elsewhere Log</h4>
+      <span className={classes.name}>Elsewhere Log</span>
     </div>
   );
 }

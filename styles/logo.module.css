@@ -7,24 +7,34 @@
   display: flex;
   align-items: center;
   gap: var(--size-3);
+  min-width: 0;
 }
 
 .mark {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
   padding: 0;
   border-radius: 8px;
   object-fit: contain;
 }
 
-.logo h4:hover,
-.logo h4:active,
-.logo h4.active {
+.name {
+  overflow-wrap: break-word;
+}
+
+.logo:hover,
+.logo:active {
   color: var(--navigation-link-hover);
 }
 
 @media (min-width: 768px) {
   .logo {
     font-size: var(--size-8);
+  }
+
+  .mark {
+    width: 3.75rem;
+    height: 3.75rem;
   }
 }
