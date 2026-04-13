@@ -13,7 +13,7 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href='/posts'>All Posts</Link>
+            <Link href='/posts'>All Notes</Link>
           </li>
           <li>
             <Link href='/contact'>Contact</Link>

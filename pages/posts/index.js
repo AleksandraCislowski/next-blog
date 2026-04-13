@@ -7,10 +7,10 @@ function AllPostsPage(props) {
   return (
     <Fragment>
       <Head>
-        <title>All My Posts</title>
+        <title>All Notes | Elsewhere Log</title>
         <meta
           name='description'
-          content='A list of all travelling-related posts'
+          content='Browse travel notes by place, story, and date.'
         />
       </Head>
       <AllPosts posts={props.posts} />

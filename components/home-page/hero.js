@@ -11,8 +11,8 @@ function Hero() {
         width={300}
         height={300}
       />
-      <h1>Hello, my name is Aleksandra!</h1>
-      <p>I blog about my travels.</p>
+      <h1>Elsewhere Log</h1>
+      <p>Travel notes from places worth remembering.</p>
     </section>
   );
 }
