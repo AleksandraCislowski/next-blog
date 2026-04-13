@@ -39,7 +39,7 @@ async function handler(req, res) {
       if (result) {
         await sendMail(
           `${name} sent you a message.`,
-          "yenna91@gmail.com",
+          process.env.NODEMAILER_TO_EMAIL || process.env.NODEMAILER_EMAIL,
           `${message} from ${email}`
         );
       }
