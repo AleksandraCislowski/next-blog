@@ -1,6 +1,6 @@
 ---
-title: "Palos (Spain)"
-date: "2022-12-29"
+title: 'Palos (Spain)'
+date: '2022-12-29'
 image: palos1.jpg
 city: Palos de la Frontera
 country: Spain
@@ -20,7 +20,7 @@ isFeatured: false
 
 ## The Expedition
 
-Palos de la Frontera is one of those places where the historical association arrives before the town itself. On August 3, 1492, the Pinta, Niña, and Santa María left from here with Christopher Columbus and the Pinzón brothers, beginning a voyage that would become one of the most consequential and complicated moments in global history.
+Palos de la Frontera is one of those places where the historical association arrives before the town itself. On August 3, 1492, three ships: the Pinta, Niña, and Santa María left from here with Christopher Columbus and the Pinzón brothers, beginning a voyage that would become one of the most consequential and complicated moments in global history.
 
 That makes the visit feel unusual. It is not only about looking at ships or reading dates; it is also about standing in a small place and realizing how large the consequences of departure can become.
 
