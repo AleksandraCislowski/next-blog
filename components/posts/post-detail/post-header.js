@@ -31,7 +31,14 @@ function PostHeader(props) {
         )}
       </div>
       <div className={classes.image}>
-        <Image src={imagePath} alt={title} fill priority sizes='(min-width: 768px) 42vw, 100vw' />
+        <Image
+          src={imagePath}
+          alt={title}
+          fill
+          priority
+          quality={90}
+          sizes='(min-width: 768px) 42vw, 100vw'
+        />
       </div>
     </header>
   );

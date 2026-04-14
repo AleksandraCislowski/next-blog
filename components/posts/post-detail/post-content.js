@@ -13,14 +13,16 @@ function PostContent(props) {
       if (node.children[0]?.tagName === "img") {
         const image = node.children[0];
         const imageAlt = image.properties.alt || image.alt || "";
+        const imageSrc = image.properties.src;
 
         return (
           <div className={classes.image}>
             <Image
-              src={`/images/posts/${post.slug}/${image.properties.src}`}
+              src={`/images/posts/${post.slug}/${imageSrc}`}
               alt={imageAlt}
               fill
-              sizes='(min-width: 768px) 46rem, 100vw'
+              quality={90}
+              sizes='(min-width: 768px) 48rem, 90vw'
             />
             {imageAlt && <span>{imageAlt}</span>}
           </div>
@@ -36,6 +38,11 @@ function PostContent(props) {
       <div className={classes.body}>
         <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
       </div>
+      <footer className={classes.footer}>
+        <a href='#page-top' className={classes.backToTop}>
+          Back to top
+        </a>
+      </footer>
     </article>
   );
 }

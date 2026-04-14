@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  min-height: 4.75rem;
+  min-height: var(--navigation-height);
   background-color: var(--navigation-background);
   border-bottom: 1px solid var(--navigation-border);
   display: flex;
@@ -8,7 +8,9 @@
   align-items: center;
   gap: var(--size-4);
   padding: var(--size-3) 5%;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .brandLink {

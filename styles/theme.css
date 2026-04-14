@@ -43,4 +43,5 @@
   --navigation-link-hover: var(--color-sun);
   --navigation-link-active: var(--color-clay);
   --navigation-border: color-mix(in srgb, var(--color-paper) 14%, transparent);
+  --navigation-height: 4.75rem;
 }

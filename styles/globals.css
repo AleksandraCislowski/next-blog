@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navigation-height) + 1rem);
+}
+
 body {
   --size-1: 0.25rem;
   --size-2: 0.5rem;
