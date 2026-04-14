@@ -14,44 +14,70 @@ tags:
   - Andalusia
   - architecture
   - plazas
-excerpt: This is the capital and largest city of the Spanish autonomous community of Andalusia and the province of Seville. It is situated on the lower reaches of the River Guadalquivir, in the southwest of the Iberian Peninsula.
+excerpt: A bright Seville city break through fountains, tiled plazas, palace walls, palms, Las Setas at night, and the kind of Andalusian scale that makes every walk feel cinematic.
 isFeatured: true
 ---
 
+Seville is not a subtle city, and that is part of the pleasure. It gives you fountains, palms, warm stone, tiled benches, palace walls, huge plazas, and evening light that makes everything feel a little theatrical.
+
+It is one of those places where the walk itself can become the main attraction. Even before getting to the famous stops, the city already feels generous.
+
 ![A fountain in Seville](seville5.jpg)
 
-## Main sights
+The fountains were a good first note: movement, shade, and that relaxed public-space feeling that Seville does so well.
 
-Seville is a big tourist centre in Spain. In 2018, there were over 2.5 million travellers and tourists who stayed at a tourist accommodation, placing it third in Spain after Madrid and Barcelona. The city has an overall low level of seasonality, so there are tourists year-round. There are many landmarks, museums, parks, gardens and other kinds of tourist spots around the city so there is something for everyone. The Alcázar, the Cathedral, and the General Archive of the Indies are UNESCO World Heritage Sites.
+## Main Sights
+
+Seville's historic core carries a lot of weight. The Alcázar, the Cathedral, and the General Archive of the Indies are listed together as a UNESCO World Heritage Site, and even if you are not trying to see everything, the city makes it hard not to notice the layers of power, religion, trade, and architecture.
 
 ![A fountain in the park](seville6.jpg)
 
+In the parks, Seville becomes softer. The city can feel grand, but it also gives you these slower green spaces where the heat and scale settle down.
+
 ![Castle walls in Seville](seville7.jpg)
+
+The walls bring back the older, more monumental side of the city. Seville has a way of moving quickly between shade, gardens, stone, and ceremony.
 
 ![A fountain in the park](seville9.jpg)
 
+Another fountain, another pause. I like that Seville's public spaces invite you to stop often, which is exactly what you need in a city this full.
+
 ![Palm trees](seville13.jpg)
+
+The palms make the skyline feel warm and open, especially when they appear between heavier historic buildings.
 
 ## Plaza de España
 
-At the park's north end, the semi-circular Plaza de España is marked by tall towers and a series of benches covered in painted tiles dedicated to each of the 48 provinces of Spain. The location has been used in the filming of several movies.
-
-At the southern end of the park, the Plaza de América is flanked by three structures emulating different historical styles: the Royal Pavilion has Gothic features, the Mudéjar Pavilion has a Mudéjar style, and the Bellas Artes Pavilion has a Renaissance style. The two latter pavilions are each used as museums today.
+Plaza de España is one of those places that looks almost unreal in person. Built for the Ibero-American Exposition of 1929, it is grand in a very deliberate way: semi-circular, tiled, symmetrical, and made for slow looking.
 
 ![Plaza de España landscape](seville2.jpg)
 
+The first view is all scale. Towers, arcades, water, bridges, and open space come together in a way that feels designed to impress from every angle.
+
 ![Plaza de España landscape](seville3.jpg)
+
+But the details matter just as much. The tiles keep the plaza from becoming only monumental; they add color, pattern, and a more intimate rhythm.
 
 ![Plaza de España landscape](seville4.jpg)
 
+It is a place where you naturally keep circling. Every few steps, the composition changes and another part of the plaza catches the light.
+
 ![Plaza de España landscape](seville8.jpg)
+
+The bridges and water make it feel even more theatrical, but in a way that is hard not to enjoy.
 
 ![Plaza de España landscape](seville10.jpg)
 
+I can see why it appears in films. It already feels like a set, but one that still works beautifully as public space.
+
 ![Plaza de España landscape](seville12.jpg)
 
-## Metropol Parasol project
+By the end, Plaza de España felt like the most Seville version of Seville: big, warm, decorative, and completely confident.
 
-In 2004 the project, commonly known as Las Setas ('The Mushrooms'), due to the appearance of the structure, was launched to revitalise the Plaza de la Encarnación, for years used as a car park and seen as a dead spot between more popular tourist destinations in the city. The Metropol Parasol was completed in March 2011, costing just over €102 million in total, more than twice as much as originally planned. Constructed from crossed wooden beams, Las Setas is said to be the largest timber-framed structure in the world.
+## Las Setas
 
 ![Metropol Parasol project at night](seville11.jpg)
+
+Las Setas, officially Metropol Parasol, gives the city a different kind of landmark. Finished in 2011, it is modern, strange, and especially good at night, when the wooden structure becomes more about shape and atmosphere than explanation.
+
+I liked ending with it because it proves Seville is not only its historic image. The city can be ancient, tiled, ceremonial, green, and futuristic-looking within the same trip.
