@@ -4,15 +4,263 @@
   margin: var(--size-8) auto;
 }
 
-.posts h1 {
+.header {
+  max-width: 46rem;
+  margin: 0 auto var(--size-8);
+  text-align: center;
+}
+
+.kicker {
+  margin: 0 0 var(--size-3);
+  color: var(--color-clay);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.header h1 {
   font-size: var(--size-8);
   color: var(--color-grey-800);
-  text-align: center;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.header p:last-child {
+  color: var(--color-grey-600);
+  font-size: var(--size-5);
+  line-height: 1.7;
+  margin: var(--size-4) 0 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--size-3);
   margin: 0 0 var(--size-8);
 }
 
+.stats div {
+  border-top: 3px solid var(--color-clay);
+  background-color: color-mix(in srgb, var(--color-mist) 48%, transparent);
+  border-radius: 8px;
+  padding: var(--size-4);
+}
+
+.stats dt {
+  color: var(--color-grey-600);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stats dd {
+  color: var(--color-moss);
+  font-family: var(--font-heading);
+  font-size: var(--size-8);
+  font-weight: 700;
+  line-height: 1;
+  margin: var(--size-2) 0 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+  margin: 0 0 var(--size-5);
+  padding: var(--size-5) 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+}
+
+.filterIntro p {
+  color: var(--color-moss);
+  font-family: var(--font-heading);
+  font-size: var(--size-6);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.filterControls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--size-3);
+  align-items: end;
+}
+
+.filterControls > button,
+.emptyState button {
+  min-height: 2.75rem;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.dropdownLabel {
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.dropdownTrigger {
+  position: relative;
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-moss) 24%, transparent);
+  border-radius: 8px;
+  background-color: var(--color-paper);
+  color: var(--color-moss);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: var(--size-2) var(--size-8) var(--size-2) var(--size-3);
+  text-align: left;
+}
+
+.dropdownTrigger::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: var(--size-3);
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--color-clay);
+  border-bottom: 2px solid var(--color-clay);
+  transform: translateY(-64%) rotate(45deg);
+}
+
+.dropdownTrigger:hover {
+  border-color: var(--color-clay);
+}
+
+.dropdownTrigger:focus-visible {
+  border-color: var(--color-clay);
+  outline: 2px solid var(--color-sun);
+  outline-offset: 3px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + var(--size-2));
+  left: 0;
+  z-index: 20;
+  display: grid;
+  width: min(18rem, 100%);
+  max-height: 18rem;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--color-moss) 24%, transparent);
+  border-radius: 8px;
+  background-color: var(--color-paper);
+  box-shadow: 0 1rem 2rem color-mix(in srgb, var(--color-ink) 18%, transparent);
+  padding: var(--size-2);
+}
+
+.dropdownMenu button {
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-weight: 700;
+  padding: var(--size-2) var(--size-3);
+  text-align: left;
+}
+
+.dropdownMenu button:hover,
+.dropdownMenu button:active,
+.dropdownMenu button:focus-visible,
+.dropdownMenu .activeOption {
+  background-color: var(--color-mist);
+  color: var(--color-moss);
+}
+
+.dropdownMenu button:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 2px;
+}
+
+.filterControls > button,
+.emptyState button {
+  border: 1px solid var(--color-moss);
+  background-color: var(--color-moss);
+  color: var(--color-paper);
+  font-weight: 800;
+  padding: var(--size-2) var(--size-4);
+}
+
+.filterControls > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
+}
+
+.filterControls > button:focus-visible,
+.emptyState button:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 4px;
+}
+
+.filterControls > button:not(:disabled):hover,
+.filterControls > button:not(:disabled):active,
+.emptyState button:hover,
+.emptyState button:active {
+  border-color: var(--color-clay);
+  background-color: var(--color-clay);
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 var(--size-4);
+}
+
+.resultsHeader p {
+  color: var(--color-grey-600);
+  font-weight: 800;
+  margin: 0;
+}
+
+.emptyState {
+  max-width: 42rem;
+  margin: var(--size-8) auto;
+  text-align: center;
+}
+
+.emptyState h2 {
+  color: var(--color-moss);
+  font-size: var(--size-8);
+  margin: 0;
+}
+
+.emptyState p {
+  color: var(--color-grey-600);
+  font-size: var(--size-5);
+  margin: var(--size-3) 0 var(--size-5);
+}
+
 @media (min-width: 768px) {
-  .posts h1 {
+  .header h1 {
     font-size: var(--size-16);
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .filters {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+
+  .filterControls {
+    grid-template-columns: repeat(3, minmax(10rem, 1fr)) auto;
+    flex: 1;
+    max-width: 56rem;
   }
 }
