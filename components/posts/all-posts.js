@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import classes from "../../styles/all-posts.module.css";
 import PostsGrid from "./posts-grid";
 
@@ -17,6 +17,18 @@ function getUniqueOptions(posts, getValue) {
 
 function getUniqueTags(posts) {
   return [...new Set(posts.flatMap((post) => post.tags || []))].sort();
+}
+
+function getMatchingPosts(posts, filters) {
+  const { country = ALL_FILTER, tripType = ALL_FILTER, tag = ALL_FILTER } = filters;
+
+  return posts.filter((post) => {
+    const countryMatches = country === ALL_FILTER || post.location?.country === country;
+    const tripTypeMatches = tripType === ALL_FILTER || post.tripType === tripType;
+    const tagMatches = tag === ALL_FILTER || post.tags?.includes(tag);
+
+    return countryMatches && tripTypeMatches && tagMatches;
+  });
 }
 
 function FilterDropdown(props) {
@@ -93,47 +105,49 @@ function AllPosts(props) {
   const [selectedSort, setSelectedSort] = useState("newest");
   const [openFilter, setOpenFilter] = useState(null);
 
-  const countries = useMemo(
-    () => getUniqueOptions(posts, (post) => post.location?.country),
-    [posts]
-  );
-  const tripTypes = useMemo(
-    () => getUniqueOptions(posts, (post) => post.tripType),
-    [posts]
-  );
-  const tags = useMemo(() => getUniqueTags(posts), [posts]);
+  const availableCountries = useMemo(() => {
+    return getUniqueOptions(
+      getMatchingPosts(posts, {
+        tripType: selectedTripType,
+        tag: selectedTag,
+      }),
+      (post) => post.location?.country
+    );
+  }, [posts, selectedTag, selectedTripType]);
+  const availableTripTypes = useMemo(() => {
+    return getUniqueOptions(
+      getMatchingPosts(posts, {
+        country: selectedCountry,
+        tag: selectedTag,
+      }),
+      (post) => post.tripType
+    );
+  }, [posts, selectedCountry, selectedTag]);
+  const availableTags = useMemo(() => {
+    return getUniqueTags(
+      getMatchingPosts(posts, {
+        country: selectedCountry,
+        tripType: selectedTripType,
+      })
+    );
+  }, [posts, selectedCountry, selectedTripType]);
   const countryOptions = useMemo(
-    () => countries.map((country) => ({ value: country, label: country })),
-    [countries]
+    () => availableCountries.map((country) => ({ value: country, label: country })),
+    [availableCountries]
   );
   const tripTypeOptions = useMemo(
-    () => tripTypes.map((tripType) => ({ value: tripType, label: tripType })),
-    [tripTypes]
+    () => availableTripTypes.map((tripType) => ({ value: tripType, label: tripType })),
+    [availableTripTypes]
   );
   const tagOptions = useMemo(
-    () => tags.map((tag) => ({ value: tag, label: tag })),
-    [tags]
+    () => availableTags.map((tag) => ({ value: tag, label: tag })),
+    [availableTags]
   );
-  const stats = useMemo(() => {
-    const cities = new Set(posts.map((post) => post.location?.city).filter(Boolean));
-
-    return [
-      { label: "Notes", value: posts.length },
-      { label: "Countries", value: countries.length },
-      { label: "Cities", value: cities.size },
-      { label: "Tags", value: tags.length },
-    ];
-  }, [countries.length, posts, tags.length]);
-
   const filteredPosts = useMemo(() => {
-    const matchingPosts = posts.filter((post) => {
-      const countryMatches =
-        selectedCountry === ALL_FILTER || post.location?.country === selectedCountry;
-      const tripTypeMatches =
-        selectedTripType === ALL_FILTER || post.tripType === selectedTripType;
-      const tagMatches = selectedTag === ALL_FILTER || post.tags?.includes(selectedTag);
-
-      return countryMatches && tripTypeMatches && tagMatches;
+    const matchingPosts = getMatchingPosts(posts, {
+      country: selectedCountry,
+      tripType: selectedTripType,
+      tag: selectedTag,
     });
 
     return [...matchingPosts].sort((firstPost, secondPost) => {
@@ -167,6 +181,44 @@ function AllPosts(props) {
       return firstPost.date > secondPost.date ? -1 : 1;
     });
   }, [posts, selectedCountry, selectedSort, selectedTag, selectedTripType]);
+
+  useEffect(() => {
+    if (selectedCountry !== ALL_FILTER && !availableCountries.includes(selectedCountry)) {
+      setSelectedCountry(ALL_FILTER);
+    }
+
+    if (selectedTripType !== ALL_FILTER && !availableTripTypes.includes(selectedTripType)) {
+      setSelectedTripType(ALL_FILTER);
+    }
+
+    if (selectedTag !== ALL_FILTER && !availableTags.includes(selectedTag)) {
+      setSelectedTag(ALL_FILTER);
+    }
+  }, [
+    availableCountries,
+    availableTags,
+    availableTripTypes,
+    selectedCountry,
+    selectedTag,
+    selectedTripType,
+  ]);
+
+  const stats = useMemo(() => {
+    const filteredCountries = new Set(
+      filteredPosts.map((post) => post.location?.country).filter(Boolean)
+    );
+    const filteredCities = new Set(
+      filteredPosts.map((post) => post.location?.city).filter(Boolean)
+    );
+    const filteredTags = new Set(filteredPosts.flatMap((post) => post.tags || []));
+
+    return [
+      { label: "Notes", value: filteredPosts.length },
+      { label: "Countries", value: filteredCountries.size },
+      { label: "Cities", value: filteredCities.size },
+      { label: "Tags", value: filteredTags.size },
+    ];
+  }, [filteredPosts]);
 
   const activeFilters = [
     {
@@ -282,7 +334,7 @@ function AllPosts(props) {
           {activeFilters.map((filter) => (
             <li key={filter.id}>
               <button type='button' onClick={filter.reset}>
-                <span>{filter.label}</span>
+                <span>{filter.label}:</span>
                 <strong>{filter.value}</strong>
               </button>
             </li>

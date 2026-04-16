@@ -247,27 +247,38 @@
   font-size: 0.95rem;
   font-weight: 800;
   line-height: 1;
-  padding: var(--size-2) var(--size-3);
+  padding: 0 var(--size-3);
 }
 
 .activeFilters button::after {
   content: "x";
   color: var(--color-clay);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 900;
+  height: 1.1rem;
   line-height: 1;
+  transform: translateY(-2px);
 }
 
 .activeFilters span {
   color: var(--color-grey-600);
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  height: 1.1rem;
   line-height: 1;
-  text-transform: uppercase;
 }
 
 .activeFilters strong {
   color: var(--color-moss);
+  display: inline-flex;
+  align-items: center;
   font-size: 0.95rem;
+  height: 1.1rem;
   line-height: 1;
+  transform: translateY(-1px);
 }
 
 .activeFilters button:hover,
