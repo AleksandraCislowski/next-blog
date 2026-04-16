@@ -4,6 +4,13 @@ import PostsGrid from "./posts-grid";
 
 const ALL_FILTER = "all";
 
+const SORT_OPTIONS = [
+  { value: "newest", label: "Newest first" },
+  { value: "oldest", label: "Oldest first" },
+  { value: "place", label: "Place A-Z" },
+  { value: "reading-time", label: "Shortest read" },
+];
+
 function getUniqueOptions(posts, getValue) {
   return [...new Set(posts.map(getValue).filter(Boolean))].sort();
 }
@@ -13,8 +20,19 @@ function getUniqueTags(posts) {
 }
 
 function FilterDropdown(props) {
-  const { id, label, value, defaultLabel, options, isOpen, onToggle, onChange } = props;
-  const selectedLabel = value === ALL_FILTER ? defaultLabel : value;
+  const {
+    id,
+    label,
+    value,
+    defaultLabel,
+    options,
+    isOpen,
+    onToggle,
+    onChange,
+    showDefaultOption = true,
+  } = props;
+  const selectedOption = options.find((option) => option.value === value);
+  const selectedLabel = selectedOption?.label || defaultLabel;
 
   function selectOption(nextValue) {
     onChange(nextValue);
@@ -42,21 +60,23 @@ function FilterDropdown(props) {
       </button>
       {isOpen && (
         <div id={`${id}-options`} className={classes.dropdownMenu}>
-          <button
-            type='button'
-            className={value === ALL_FILTER ? classes.activeOption : ""}
-            onClick={() => selectOption(ALL_FILTER)}
-          >
-            {defaultLabel}
-          </button>
+          {showDefaultOption && (
+            <button
+              type='button'
+              className={value === ALL_FILTER ? classes.activeOption : ""}
+              onClick={() => selectOption(ALL_FILTER)}
+            >
+              {defaultLabel}
+            </button>
+          )}
           {options.map((option) => (
             <button
-              key={option}
+              key={option.value}
               type='button'
-              className={value === option ? classes.activeOption : ""}
-              onClick={() => selectOption(option)}
+              className={value === option.value ? classes.activeOption : ""}
+              onClick={() => selectOption(option.value)}
             >
-              {option}
+              {option.label}
             </button>
           ))}
         </div>
@@ -70,6 +90,7 @@ function AllPosts(props) {
   const [selectedCountry, setSelectedCountry] = useState(ALL_FILTER);
   const [selectedTripType, setSelectedTripType] = useState(ALL_FILTER);
   const [selectedTag, setSelectedTag] = useState(ALL_FILTER);
+  const [selectedSort, setSelectedSort] = useState("newest");
   const [openFilter, setOpenFilter] = useState(null);
 
   const countries = useMemo(
@@ -81,6 +102,18 @@ function AllPosts(props) {
     [posts]
   );
   const tags = useMemo(() => getUniqueTags(posts), [posts]);
+  const countryOptions = useMemo(
+    () => countries.map((country) => ({ value: country, label: country })),
+    [countries]
+  );
+  const tripTypeOptions = useMemo(
+    () => tripTypes.map((tripType) => ({ value: tripType, label: tripType })),
+    [tripTypes]
+  );
+  const tagOptions = useMemo(
+    () => tags.map((tag) => ({ value: tag, label: tag })),
+    [tags]
+  );
   const stats = useMemo(() => {
     const cities = new Set(posts.map((post) => post.location?.city).filter(Boolean));
 
@@ -93,7 +126,7 @@ function AllPosts(props) {
   }, [countries.length, posts, tags.length]);
 
   const filteredPosts = useMemo(() => {
-    return posts.filter((post) => {
+    const matchingPosts = posts.filter((post) => {
       const countryMatches =
         selectedCountry === ALL_FILTER || post.location?.country === selectedCountry;
       const tripTypeMatches =
@@ -102,7 +135,59 @@ function AllPosts(props) {
 
       return countryMatches && tripTypeMatches && tagMatches;
     });
-  }, [posts, selectedCountry, selectedTag, selectedTripType]);
+
+    return [...matchingPosts].sort((firstPost, secondPost) => {
+      if (selectedSort === "oldest") {
+        return firstPost.date > secondPost.date ? 1 : -1;
+      }
+
+      if (selectedSort === "place") {
+        const firstPlace = [
+          firstPost.location?.city,
+          firstPost.location?.country,
+          firstPost.title,
+        ]
+          .filter(Boolean)
+          .join(" ");
+        const secondPlace = [
+          secondPost.location?.city,
+          secondPost.location?.country,
+          secondPost.title,
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+        return firstPlace.localeCompare(secondPlace, "en", { sensitivity: "base" });
+      }
+
+      if (selectedSort === "reading-time") {
+        return (firstPost.readingTime || 0) - (secondPost.readingTime || 0);
+      }
+
+      return firstPost.date > secondPost.date ? -1 : 1;
+    });
+  }, [posts, selectedCountry, selectedSort, selectedTag, selectedTripType]);
+
+  const activeFilters = [
+    {
+      id: "country",
+      label: "Country",
+      value: selectedCountry,
+      reset: () => setSelectedCountry(ALL_FILTER),
+    },
+    {
+      id: "trip-type",
+      label: "Trip type",
+      value: selectedTripType,
+      reset: () => setSelectedTripType(ALL_FILTER),
+    },
+    {
+      id: "tag",
+      label: "Tag",
+      value: selectedTag,
+      reset: () => setSelectedTag(ALL_FILTER),
+    },
+  ].filter((filter) => filter.value !== ALL_FILTER);
 
   const hasActiveFilters =
     selectedCountry !== ALL_FILTER ||
@@ -146,7 +231,7 @@ function AllPosts(props) {
             label='Country'
             value={selectedCountry}
             defaultLabel='All countries'
-            options={countries}
+            options={countryOptions}
             isOpen={openFilter === "country-filter"}
             onToggle={setOpenFilter}
             onChange={setSelectedCountry}
@@ -157,7 +242,7 @@ function AllPosts(props) {
             label='Trip type'
             value={selectedTripType}
             defaultLabel='All trip types'
-            options={tripTypes}
+            options={tripTypeOptions}
             isOpen={openFilter === "trip-type-filter"}
             onToggle={setOpenFilter}
             onChange={setSelectedTripType}
@@ -168,17 +253,42 @@ function AllPosts(props) {
             label='Tag'
             value={selectedTag}
             defaultLabel='All tags'
-            options={tags}
+            options={tagOptions}
             isOpen={openFilter === "tag-filter"}
             onToggle={setOpenFilter}
             onChange={setSelectedTag}
           />
 
+          <FilterDropdown
+            id='sort-filter'
+            label='Sort by'
+            value={selectedSort}
+            defaultLabel='Newest first'
+            options={SORT_OPTIONS}
+            isOpen={openFilter === "sort-filter"}
+            onToggle={setOpenFilter}
+            onChange={setSelectedSort}
+            showDefaultOption={false}
+          />
+
           <button type='button' onClick={clearFilters} disabled={!hasActiveFilters}>
-            Clear
+            Clear filters
           </button>
         </div>
       </div>
+
+      {activeFilters.length > 0 && (
+        <ul className={classes.activeFilters} aria-label='Active filters'>
+          {activeFilters.map((filter) => (
+            <li key={filter.id}>
+              <button type='button' onClick={filter.reset}>
+                <span>{filter.label}</span>
+                <strong>{filter.value}</strong>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
 
       <div className={classes.resultsHeader}>
         <p>

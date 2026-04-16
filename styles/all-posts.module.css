@@ -225,6 +225,63 @@
   margin: 0;
 }
 
+.activeFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-2);
+  list-style: none;
+  margin: 0 0 var(--size-5);
+  padding: 0;
+}
+
+.activeFilters button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+  min-height: 2.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-clay) 48%, transparent);
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--color-sun) 18%, var(--color-paper));
+  color: var(--color-moss);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: var(--size-2) var(--size-3);
+}
+
+.activeFilters button::after {
+  content: "x";
+  color: var(--color-clay);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.activeFilters span {
+  color: var(--color-grey-600);
+  font-size: 0.72rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.activeFilters strong {
+  color: var(--color-moss);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.activeFilters button:hover,
+.activeFilters button:active,
+.activeFilters button:focus-visible {
+  border-color: var(--color-clay);
+  background-color: color-mix(in srgb, var(--color-sun) 32%, var(--color-paper));
+}
+
+.activeFilters button:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 3px;
+}
+
 .emptyState {
   max-width: 42rem;
   margin: var(--size-8) auto;
@@ -252,6 +309,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .filterControls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
   .filters {
     flex-direction: row;
     align-items: end;
@@ -259,8 +322,8 @@
   }
 
   .filterControls {
-    grid-template-columns: repeat(3, minmax(10rem, 1fr)) auto;
+    grid-template-columns: repeat(4, minmax(9rem, 1fr)) auto;
     flex: 1;
-    max-width: 56rem;
+    max-width: 68rem;
   }
 }
