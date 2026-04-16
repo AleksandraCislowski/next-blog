@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TravelMap from "../../maps/travel-map";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
@@ -28,6 +29,14 @@ function PostHeader(props) {
               <li key={tag}>{tag}</li>
             ))}
           </ul>
+        )}
+        {location?.coordinates && (
+          <div className={classes.mapPanel}>
+            <p>Location</p>
+            <div className={classes.map} aria-label={`Map showing ${place}`}>
+              <TravelMap places={[post]} focused />
+            </div>
+          </div>
         )}
       </div>
       <div className={classes.image}>

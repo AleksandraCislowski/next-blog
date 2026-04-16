@@ -28,6 +28,10 @@ body {
   font-family: var(--font-body);
 }
 
+#highlights {
+  scroll-margin-top: calc(var(--navigation-height) + 1rem);
+}
+
 h1,
 h2,
 h3 {

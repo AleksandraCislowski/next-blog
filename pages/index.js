@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import Hero from "../components/home-page/hero";
 import FeaturedPosts from "../components/home-page/featured-posts";
-import { getFeaturedPosts } from "../lib/posts-util";
+import PlacesOverview from "../components/home-page/places-overview";
+import { getAllPosts, getFeaturedPosts } from "../lib/posts-util";
 import Head from "next/head";
 
 function HomePage(props) {
@@ -15,17 +16,22 @@ function HomePage(props) {
         />
       </Head>
       <Hero />
-      <FeaturedPosts posts={props.posts} />
+      <div id='highlights'>
+        <PlacesOverview posts={props.allPosts} />
+        <FeaturedPosts posts={props.posts} />
+      </div>
     </Fragment>
   );
 }
 
 export function getStaticProps() {
   const featuredPosts = getFeaturedPosts();
+  const allPosts = getAllPosts();
 
   return {
     props: {
       posts: featuredPosts,
+      allPosts,
     },
   };
 }

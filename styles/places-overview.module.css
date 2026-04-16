@@ -1,0 +1,113 @@
+.section {
+  position: relative;
+  z-index: 0;
+  width: 90%;
+  max-width: 80rem;
+  margin: var(--size-16) auto;
+}
+
+.copy {
+  max-width: 44rem;
+  margin-bottom: var(--size-8);
+}
+
+.kicker {
+  margin: 0 0 var(--size-3);
+  color: var(--color-clay);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  color: var(--color-grey-800);
+  font-size: var(--size-8);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.copy p:last-child {
+  color: var(--color-grey-600);
+  font-size: var(--size-5);
+  line-height: 1.7;
+  margin: var(--size-4) 0 0;
+}
+
+.layout {
+  display: grid;
+  gap: var(--size-6);
+}
+
+.map {
+  position: relative;
+  z-index: 0;
+  min-height: 24rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+  border-radius: 8px;
+  background-color: var(--color-mist);
+}
+
+.placeList {
+  display: grid;
+  align-content: start;
+  gap: var(--size-2);
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  scrollbar-color: var(--color-sage) transparent;
+  scrollbar-width: thin;
+}
+
+.placeList a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-3);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-moss) 14%, transparent);
+  border-radius: 8px;
+  color: var(--color-moss);
+  padding: var(--size-3);
+}
+
+.placeList a:hover,
+.placeList a:active,
+.placeList a:focus-visible {
+  background-color: color-mix(in srgb, var(--color-mist) 48%, transparent);
+}
+
+.placeList a:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 3px;
+}
+
+.placeList span {
+  color: var(--color-grey-600);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.placeList strong {
+  font-size: var(--size-4);
+}
+
+@media (min-width: 768px) {
+  .copy h2 {
+    font-size: var(--size-16);
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.35fr);
+    align-items: stretch;
+  }
+
+  .map {
+    min-height: 34rem;
+  }
+
+  .placeList {
+    max-height: 34rem;
+  }
+}

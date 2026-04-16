@@ -38,8 +38,8 @@ function MainNavigation() {
       >
         <ul>
           <li>
-            <Link href='/#featured-notes' onClick={closeMenu}>
-              Featured
+            <Link href='/#highlights' onClick={closeMenu}>
+              Highlights
             </Link>
           </li>
           <li>

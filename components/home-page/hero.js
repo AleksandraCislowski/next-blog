@@ -17,7 +17,7 @@ function Hero() {
       <div className={classes.content}>
         <h1>Elsewhere Log</h1>
         <p>Travel notes from places worth remembering.</p>
-        <a href='#featured-notes'>Read the notes</a>
+        <a href='#highlights'>Read the notes</a>
       </div>
     </section>
   );
