@@ -3,9 +3,10 @@ import classes from "../../../styles/post-content.module.css";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 import RelatedPosts from "./related-posts";
+import PostNavigation from "./post-navigation";
 
 function PostContent(props) {
-  const { post, relatedPosts } = props;
+  const { post, relatedPosts, previousPost, nextPost } = props;
 
   const customRenderers = {
     p(paragraph) {
@@ -39,6 +40,7 @@ function PostContent(props) {
       <div className={classes.body}>
         <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
       </div>
+      <PostNavigation previousPost={previousPost} nextPost={nextPost} />
       <RelatedPosts posts={relatedPosts} />
       <footer className={classes.footer}>
         <a href='#page-top' className={classes.backToTop}>

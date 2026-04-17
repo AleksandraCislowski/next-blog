@@ -29,6 +29,22 @@ function getRelatedPosts(currentPost, allPosts) {
     .map((item) => item.post);
 }
 
+function getAdjacentPosts(currentPost, allPosts) {
+  const currentIndex = allPosts.findIndex((post) => post.slug === currentPost.slug);
+
+  if (currentIndex === -1) {
+    return {
+      previousPost: null,
+      nextPost: null,
+    };
+  }
+
+  return {
+    previousPost: allPosts[currentIndex - 1] || null,
+    nextPost: allPosts[currentIndex + 1] || null,
+  };
+}
+
 function PostDetailPage(props) {
   const { post } = props;
 
@@ -64,7 +80,12 @@ function PostDetailPage(props) {
           mainEntityOfPage: absoluteUrl(`/posts/${post.slug}`),
         }}
       />
-      <PostContent post={post} relatedPosts={props.relatedPosts} />
+      <PostContent
+        post={post}
+        relatedPosts={props.relatedPosts}
+        previousPost={props.previousPost}
+        nextPost={props.nextPost}
+      />
     </Fragment>
   );
 }
@@ -76,11 +97,14 @@ export function getStaticProps(context) {
   const postData = getPostData(slug);
   const allPosts = getAllPosts();
   const relatedPosts = getRelatedPosts(postData, allPosts);
+  const { previousPost, nextPost } = getAdjacentPosts(postData, allPosts);
 
   return {
     props: {
       post: postData,
       relatedPosts,
+      previousPost,
+      nextPost,
     },
     revalidate: 600,
   };
