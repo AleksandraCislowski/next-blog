@@ -31,6 +31,31 @@ function getMatchingPosts(posts, filters) {
   });
 }
 
+function getSearchableText(post) {
+  return [
+    post.title,
+    post.excerpt,
+    post.tripType,
+    post.location?.city,
+    post.location?.country,
+    post.location?.region,
+    ...(post.tags || []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function getSearchedPosts(posts, searchTerm) {
+  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
+  if (!normalizedSearchTerm) {
+    return posts;
+  }
+
+  return posts.filter((post) => getSearchableText(post).includes(normalizedSearchTerm));
+}
+
 function FilterDropdown(props) {
   const {
     id,
@@ -123,6 +148,7 @@ function AllPosts(props) {
   const [selectedTripType, setSelectedTripType] = useState(ALL_FILTER);
   const [selectedTag, setSelectedTag] = useState(ALL_FILTER);
   const [selectedSort, setSelectedSort] = useState("newest");
+  const [searchTerm, setSearchTerm] = useState("");
   const [openFilter, setOpenFilter] = useState(null);
 
   const availableCountries = useMemo(() => {
@@ -164,11 +190,14 @@ function AllPosts(props) {
     [availableTags]
   );
   const filteredPosts = useMemo(() => {
-    const matchingPosts = getMatchingPosts(posts, {
-      country: selectedCountry,
-      tripType: selectedTripType,
-      tag: selectedTag,
-    });
+    const matchingPosts = getSearchedPosts(
+      getMatchingPosts(posts, {
+        country: selectedCountry,
+        tripType: selectedTripType,
+        tag: selectedTag,
+      }),
+      searchTerm
+    );
 
     return [...matchingPosts].sort((firstPost, secondPost) => {
       if (selectedSort === "oldest") {
@@ -200,7 +229,7 @@ function AllPosts(props) {
 
       return firstPost.date > secondPost.date ? -1 : 1;
     });
-  }, [posts, selectedCountry, selectedSort, selectedTag, selectedTripType]);
+  }, [posts, searchTerm, selectedCountry, selectedSort, selectedTag, selectedTripType]);
 
   useEffect(() => {
     if (selectedCountry !== ALL_FILTER && !availableCountries.includes(selectedCountry)) {
@@ -242,6 +271,12 @@ function AllPosts(props) {
 
   const activeFilters = [
     {
+      id: "search",
+      label: "Search",
+      value: searchTerm.trim(),
+      reset: () => setSearchTerm(""),
+    },
+    {
       id: "country",
       label: "Country",
       value: selectedCountry,
@@ -259,14 +294,16 @@ function AllPosts(props) {
       value: selectedTag,
       reset: () => setSelectedTag(ALL_FILTER),
     },
-  ].filter((filter) => filter.value !== ALL_FILTER);
+  ].filter((filter) => filter.value && filter.value !== ALL_FILTER);
 
   const hasActiveFilters =
+    searchTerm.trim() !== "" ||
     selectedCountry !== ALL_FILTER ||
     selectedTripType !== ALL_FILTER ||
     selectedTag !== ALL_FILTER;
 
   function clearFilters() {
+    setSearchTerm("");
     setSelectedCountry(ALL_FILTER);
     setSelectedTripType(ALL_FILTER);
     setSelectedTag(ALL_FILTER);
@@ -297,6 +334,16 @@ function AllPosts(props) {
         <div className={classes.filters} aria-label='Filter travel notes'>
           <div className={classes.filterIntro}>
             <p>Filter notes</p>
+          </div>
+          <div className={classes.searchControl}>
+            <label htmlFor='post-search'>Search notes</label>
+            <input
+              id='post-search'
+              type='search'
+              value={searchTerm}
+              placeholder='Try Sweden, cathedral, coastline...'
+              onChange={(event) => setSearchTerm(event.target.value)}
+            />
           </div>
           <div className={classes.filterControls}>
             <FilterDropdown
