@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='theme-color' content='#33483d' />
+        <meta name='application-name' content='Elsewhere Log' />
         <link rel='icon' type='image/png' href='/images/site/elsewhere-logo.png' />
         <link rel='apple-touch-icon' href='/images/site/elsewhere-logo.png' />
       </Head>

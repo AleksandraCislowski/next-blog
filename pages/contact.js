@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import Head from "next/head";
 import classes from "../styles/contact.module.css";
+import Seo from "../components/seo/seo";
 
 const contactEmail = "cislowski.aleksandra@gmail.com";
 const emailSubject = "Hello from Elsewhere Log";
@@ -12,13 +12,12 @@ function ContactPage() {
 
   return (
     <Fragment>
-      <Head>
-        <title>Contact | Elsewhere Log</title>
-        <meta
-          name='description'
-          content='Get in touch about travel notes, frontend work, and small useful tools.'
-        />
-      </Head>
+      <Seo
+        title='Contact'
+        description='Get in touch about travel notes, frontend work, and small useful tools.'
+        path='/contact'
+        image='/images/site/desert-road.png'
+      />
       <main className={classes.contact}>
         <section className={classes.hero}>
           <p className={classes.eyebrow}>Contact</p>

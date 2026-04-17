@@ -3,18 +3,25 @@ import Hero from "../components/home-page/hero";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import PlacesOverview from "../components/home-page/places-overview";
 import { getAllPosts, getFeaturedPosts } from "../lib/posts-util";
-import Head from "next/head";
+import Seo from "../components/seo/seo";
+import { absoluteUrl, siteConfig } from "../lib/site-config";
 
 function HomePage(props) {
   return (
     <Fragment>
-      <Head>
-        <title>Elsewhere Log</title>
-        <meta
-          name='description'
-          content='Travel notes from places worth remembering.'
-        />
-      </Head>
+      <Seo
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          description: siteConfig.description,
+          url: absoluteUrl("/"),
+          author: {
+            "@type": "Person",
+            name: siteConfig.author,
+          },
+        }}
+      />
       <Hero />
       <div id='highlights'>
         <PlacesOverview posts={props.allPosts} />

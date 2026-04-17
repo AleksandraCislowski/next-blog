@@ -1,16 +1,45 @@
 import { Fragment } from "react";
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getPostsFiles } from "../../lib/posts-util";
-import Head from "next/head";
+import Seo from "../../components/seo/seo";
+import { absoluteUrl, siteConfig } from "../../lib/site-config";
 
 function PostDetailPage(props) {
+  const { post } = props;
+
   return (
     <Fragment>
-      <Head>
-        <title>{props.post.title}</title>
-        <meta name='description' content={props.post.excerpt} />
-      </Head>
-      <PostContent post={props.post} />
+      <Seo
+        title={post.title}
+        description={post.excerpt}
+        path={`/posts/${post.slug}`}
+        image={post.imagePath}
+        type='article'
+        publishedTime={post.date}
+        tags={post.tags}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          image: absoluteUrl(post.imagePath),
+          datePublished: post.date,
+          author: {
+            "@type": "Person",
+            name: siteConfig.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            logo: {
+              "@type": "ImageObject",
+              url: absoluteUrl("/images/site/elsewhere-logo.png"),
+            },
+          },
+          mainEntityOfPage: absoluteUrl(`/posts/${post.slug}`),
+        }}
+      />
+      <PostContent post={post} />
     </Fragment>
   );
 }
