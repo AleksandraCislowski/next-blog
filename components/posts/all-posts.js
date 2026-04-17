@@ -51,30 +51,48 @@ function FilterDropdown(props) {
     onToggle(null);
   }
 
+  function keyDownHandler(event) {
+    if (event.key === "Escape") {
+      onToggle(null);
+    }
+  }
+
   return (
     <div
       className={classes.dropdown}
+      onKeyDown={keyDownHandler}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           onToggle(null);
         }
       }}
     >
-      <span className={classes.dropdownLabel}>{label}</span>
+      <span id={`${id}-label`} className={classes.dropdownLabel}>
+        {label}
+      </span>
       <button
         type='button'
         className={classes.dropdownTrigger}
+        aria-haspopup='menu'
         aria-expanded={isOpen}
         aria-controls={`${id}-options`}
+        aria-label={`${label}: ${selectedLabel}`}
         onClick={() => onToggle(isOpen ? null : id)}
       >
         {selectedLabel}
       </button>
       {isOpen && (
-        <div id={`${id}-options`} className={classes.dropdownMenu}>
+        <div
+          id={`${id}-options`}
+          className={classes.dropdownMenu}
+          role='menu'
+          aria-labelledby={`${id}-label`}
+        >
           {showDefaultOption && (
             <button
               type='button'
+              role='menuitemradio'
+              aria-checked={value === ALL_FILTER}
               className={value === ALL_FILTER ? classes.activeOption : ""}
               onClick={() => selectOption(ALL_FILTER)}
             >
@@ -85,6 +103,8 @@ function FilterDropdown(props) {
             <button
               key={option.value}
               type='button'
+              role='menuitemradio'
+              aria-checked={value === option.value}
               className={value === option.value ? classes.activeOption : ""}
               onClick={() => selectOption(option.value)}
             >
@@ -334,7 +354,11 @@ function AllPosts(props) {
           <ul className={classes.activeFilters} aria-label='Active filters'>
             {activeFilters.map((filter) => (
               <li key={filter.id}>
-                <button type='button' onClick={filter.reset}>
+                <button
+                  type='button'
+                  onClick={filter.reset}
+                  aria-label={`Remove ${filter.label} filter: ${filter.value}`}
+                >
                   <span>{filter.label}:</span>
                   <strong>{filter.value}</strong>
                 </button>

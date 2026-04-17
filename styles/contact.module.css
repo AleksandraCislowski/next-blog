@@ -46,7 +46,7 @@
   padding: 0.35rem 0.7rem;
   border: 1px solid color-mix(in srgb, var(--color-clay) 35%, transparent);
   border-radius: 999px;
-  color: var(--color-clay);
+  color: var(--color-primary-500);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -89,8 +89,8 @@
 }
 
 .primaryAction {
-  border: 1px solid var(--color-clay);
-  background-color: var(--color-clay);
+  border: 1px solid var(--color-primary-500);
+  background-color: var(--color-primary-500);
   color: var(--color-paper);
 }
 
@@ -107,8 +107,8 @@
 
 .secondaryAction:hover,
 .secondaryAction:focus-visible {
-  border-color: var(--color-clay);
-  color: var(--color-clay);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-500);
 }
 
 .primaryAction:focus-visible,
@@ -123,7 +123,7 @@
 }
 
 .emailNote span {
-  color: var(--color-clay);
+  color: var(--color-primary-500);
   font-weight: 700;
 }
 

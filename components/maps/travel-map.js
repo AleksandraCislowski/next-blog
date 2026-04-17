@@ -8,10 +8,21 @@ const TILE_ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
 function TravelMap(props) {
-  const { places, className = "", focused = false, interactive = true } = props;
+  const {
+    places,
+    className = "",
+    focused = false,
+    interactive = true,
+    ariaLabel,
+  } = props;
   const mapRef = useRef(null);
   const leafletMapRef = useRef(null);
   const router = useRouter();
+  const mapLabel =
+    ariaLabel ||
+    `Map showing ${places
+      .map((place) => [place.location.city, place.location.country].filter(Boolean).join(", "))
+      .join("; ")}`;
 
   useEffect(() => {
     let isMounted = true;
@@ -93,7 +104,13 @@ function TravelMap(props) {
     };
   }, [focused, interactive, places, router]);
 
-  return <div ref={mapRef} className={`${classes.mapCanvas} ${className}`} />;
+  return (
+    <div
+      ref={mapRef}
+      className={`${classes.mapCanvas} ${className}`}
+      aria-label={mapLabel}
+    />
+  );
 }
 
 export default TravelMap;

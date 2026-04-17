@@ -1,0 +1,18 @@
+.skipLink {
+  position: fixed;
+  top: var(--size-3);
+  left: var(--size-3);
+  z-index: 200;
+  transform: translateY(-200%);
+  border-radius: 8px;
+  background-color: var(--color-sun);
+  color: var(--color-ink);
+  font-weight: 800;
+  padding: var(--size-2) var(--size-3);
+}
+
+.skipLink:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}

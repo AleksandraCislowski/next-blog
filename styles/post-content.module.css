@@ -74,8 +74,8 @@
 .backToTop:hover,
 .backToTop:active,
 .backToTop:focus-visible {
-  border-color: var(--color-clay);
-  background-color: var(--color-clay);
+  border-color: var(--color-primary-500);
+  background-color: var(--color-primary-500);
   color: var(--color-paper);
 }
 

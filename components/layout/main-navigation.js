@@ -14,6 +14,12 @@ function MainNavigation() {
     setIsMenuOpen(false);
   }
 
+  function keyDownHandler(event) {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  }
+
   return (
     <header className={classes.header}>
       <Link href='/' className={classes.brandLink} aria-label='Elsewhere Log home'>
@@ -27,14 +33,15 @@ function MainNavigation() {
         aria-expanded={isMenuOpen}
         onClick={toggleMenu}
       >
-        <span />
-        <span />
-        <span />
+        <span aria-hidden='true' />
+        <span aria-hidden='true' />
+        <span aria-hidden='true' />
       </button>
       <nav
         id='main-navigation'
         className={`${classes.navigation} ${isMenuOpen ? classes.open : ""}`}
         aria-label='Main navigation'
+        onKeyDown={keyDownHandler}
       >
         <ul>
           <li>

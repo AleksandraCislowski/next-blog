@@ -8,7 +8,8 @@ function Hero() {
       <Image
         className={classes.image}
         src={coastalScene}
-        alt='An illustrated coastal landscape for Elsewhere Log.'
+        alt=''
+        aria-hidden='true'
         fill
         priority
         sizes='100vw'

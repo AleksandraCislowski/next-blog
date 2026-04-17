@@ -36,7 +36,7 @@ function PostHeader(props) {
           <div className={classes.mapPanel}>
             <p>Location</p>
             <div className={classes.map} aria-label={`Map showing ${place}`}>
-              <TravelMap places={mapPlaces} focused />
+              <TravelMap places={mapPlaces} focused ariaLabel={`Map showing ${place}`} />
             </div>
           </div>
         )}

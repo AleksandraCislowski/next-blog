@@ -42,7 +42,7 @@
 
 .kicker {
   margin: 0 0 var(--size-3);
-  color: var(--color-clay);
+  color: var(--color-primary-500);
   font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -243,8 +243,8 @@
 .filterControls > button:not(:disabled):active,
 .emptyState button:hover,
 .emptyState button:active {
-  border-color: var(--color-clay);
-  background-color: var(--color-clay);
+  border-color: var(--color-primary-500);
+  background-color: var(--color-primary-500);
 }
 
 .resultsHeader {
@@ -286,7 +286,7 @@
 
 .activeFilters button::after {
   content: "x";
-  color: var(--color-clay);
+  color: var(--color-primary-500);
   display: inline-flex;
   align-items: center;
   justify-content: center;

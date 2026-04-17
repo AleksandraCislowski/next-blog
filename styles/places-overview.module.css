@@ -13,7 +13,7 @@
 
 .kicker {
   margin: 0 0 var(--size-3);
-  color: var(--color-clay);
+  color: var(--color-primary-500);
   font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;

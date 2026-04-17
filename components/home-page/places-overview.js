@@ -34,7 +34,10 @@ function PlacesOverview(props) {
 
       <div className={classes.layout}>
         <div className={classes.map} aria-label='Mapped travel notes'>
-          <TravelMap places={places} />
+          <TravelMap
+            places={places}
+            ariaLabel='Map of travel notes published on Elsewhere Log'
+          />
         </div>
 
         <ol className={classes.placeList}>
