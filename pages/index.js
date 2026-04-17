@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Hero from "../components/home-page/hero";
 import FeaturedPosts from "../components/home-page/featured-posts";
+import FieldNotes from "../components/home-page/field-notes";
 import PlacesOverview from "../components/home-page/places-overview";
 import { getAllPosts, getFeaturedPosts } from "../lib/posts-util";
 import Seo from "../components/seo/seo";
@@ -25,6 +26,7 @@ function HomePage(props) {
       <Hero />
       <div id='highlights'>
         <PlacesOverview posts={props.allPosts} />
+        <FieldNotes posts={props.allPosts} />
         <FeaturedPosts posts={props.posts} />
       </div>
     </Fragment>
