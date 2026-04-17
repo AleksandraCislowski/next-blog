@@ -1,0 +1,32 @@
+.related {
+  margin: var(--size-16) 0 0;
+  padding-top: var(--size-8);
+  border-top: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+}
+
+.header {
+  max-width: 42rem;
+  margin: 0 auto var(--size-6);
+  text-align: center;
+}
+
+.header p {
+  margin: 0 0 var(--size-2);
+  color: var(--color-primary-500);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--color-moss);
+  font-size: var(--size-8);
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .header h2 {
+    font-size: var(--size-16);
+  }
+}

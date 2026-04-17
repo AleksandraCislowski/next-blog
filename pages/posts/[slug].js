@@ -1,8 +1,33 @@
 import { Fragment } from "react";
 import PostContent from "../../components/posts/post-detail/post-content";
-import { getPostData, getPostsFiles } from "../../lib/posts-util";
+import { getAllPosts, getPostData, getPostsFiles } from "../../lib/posts-util";
 import Seo from "../../components/seo/seo";
 import { absoluteUrl, siteConfig } from "../../lib/site-config";
+
+function getRelatedPosts(currentPost, allPosts) {
+  const currentTags = new Set(currentPost.tags || []);
+
+  return allPosts
+    .filter((post) => post.slug !== currentPost.slug)
+    .map((post) => {
+      const sameCountry = post.location?.country === currentPost.location?.country ? 3 : 0;
+      const sharedTags = (post.tags || []).filter((tag) => currentTags.has(tag)).length;
+
+      return {
+        post,
+        score: sameCountry + sharedTags,
+      };
+    })
+    .sort((firstPost, secondPost) => {
+      if (secondPost.score !== firstPost.score) {
+        return secondPost.score - firstPost.score;
+      }
+
+      return firstPost.post.date > secondPost.post.date ? -1 : 1;
+    })
+    .slice(0, 3)
+    .map((item) => item.post);
+}
 
 function PostDetailPage(props) {
   const { post } = props;
@@ -39,7 +64,7 @@ function PostDetailPage(props) {
           mainEntityOfPage: absoluteUrl(`/posts/${post.slug}`),
         }}
       />
-      <PostContent post={post} />
+      <PostContent post={post} relatedPosts={props.relatedPosts} />
     </Fragment>
   );
 }
@@ -49,9 +74,13 @@ export function getStaticProps(context) {
   const { slug } = params;
 
   const postData = getPostData(slug);
+  const allPosts = getAllPosts();
+  const relatedPosts = getRelatedPosts(postData, allPosts);
+
   return {
     props: {
       post: postData,
+      relatedPosts,
     },
     revalidate: 600,
   };

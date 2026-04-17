@@ -2,9 +2,10 @@ import Image from "next/image";
 import classes from "../../../styles/post-content.module.css";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
+import RelatedPosts from "./related-posts";
 
 function PostContent(props) {
-  const { post } = props;
+  const { post, relatedPosts } = props;
 
   const customRenderers = {
     p(paragraph) {
@@ -38,6 +39,7 @@ function PostContent(props) {
       <div className={classes.body}>
         <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
       </div>
+      <RelatedPosts posts={relatedPosts} />
       <footer className={classes.footer}>
         <a href='#page-top' className={classes.backToTop}>
           Back to top
