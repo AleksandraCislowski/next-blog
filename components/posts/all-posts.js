@@ -255,92 +255,94 @@ function AllPosts(props) {
 
   return (
     <section className={classes.posts}>
-      <div className={classes.header}>
-        <p className={classes.kicker}>Travel Archive</p>
-        <h1>Find the note that matches the next mood.</h1>
-        <p>
-          Browse the places, weekends, cities, coastlines, and quiet corners gathered so
-          far.
-        </p>
-      </div>
-
-      <dl className={classes.stats} aria-label='Travel archive stats'>
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <dt>{stat.label}</dt>
-            <dd>{stat.value}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <div className={classes.filters} aria-label='Filter travel notes'>
-        <div className={classes.filterIntro}>
-          <p>Filter notes</p>
+      <div className={classes.archiveHero}>
+        <div className={classes.header}>
+          <p className={classes.kicker}>Travel Archive</p>
+          <h1>Find the note that matches the next mood.</h1>
+          <p>
+            Browse the places, weekends, cities, coastlines, and quiet corners gathered so
+            far.
+          </p>
         </div>
-        <div className={classes.filterControls}>
-          <FilterDropdown
-            id='country-filter'
-            label='Country'
-            value={selectedCountry}
-            defaultLabel='All countries'
-            options={countryOptions}
-            isOpen={openFilter === "country-filter"}
-            onToggle={setOpenFilter}
-            onChange={setSelectedCountry}
-          />
 
-          <FilterDropdown
-            id='trip-type-filter'
-            label='Trip type'
-            value={selectedTripType}
-            defaultLabel='All trip types'
-            options={tripTypeOptions}
-            isOpen={openFilter === "trip-type-filter"}
-            onToggle={setOpenFilter}
-            onChange={setSelectedTripType}
-          />
-
-          <FilterDropdown
-            id='tag-filter'
-            label='Tag'
-            value={selectedTag}
-            defaultLabel='All tags'
-            options={tagOptions}
-            isOpen={openFilter === "tag-filter"}
-            onToggle={setOpenFilter}
-            onChange={setSelectedTag}
-          />
-
-          <FilterDropdown
-            id='sort-filter'
-            label='Sort by'
-            value={selectedSort}
-            defaultLabel='Newest first'
-            options={SORT_OPTIONS}
-            isOpen={openFilter === "sort-filter"}
-            onToggle={setOpenFilter}
-            onChange={setSelectedSort}
-            showDefaultOption={false}
-          />
-
-          <button type='button' onClick={clearFilters} disabled={!hasActiveFilters}>
-            Clear filters
-          </button>
-        </div>
-      </div>
-
-      {activeFilters.length > 0 && (
-        <ul className={classes.activeFilters} aria-label='Active filters'>
-          {activeFilters.map((filter) => (
-            <li key={filter.id}>
-              <button type='button' onClick={filter.reset}>
-                <span>{filter.label}:</span>
-                <strong>{filter.value}</strong>
-              </button>
-            </li>
+        <dl className={classes.stats} aria-label='Travel archive stats'>
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <dt>{stat.label}</dt>
+              <dd>{stat.value}</dd>
+            </div>
           ))}
-        </ul>
-      )}
+        </dl>
+
+        <div className={classes.filters} aria-label='Filter travel notes'>
+          <div className={classes.filterIntro}>
+            <p>Filter notes</p>
+          </div>
+          <div className={classes.filterControls}>
+            <FilterDropdown
+              id='country-filter'
+              label='Country'
+              value={selectedCountry}
+              defaultLabel='All countries'
+              options={countryOptions}
+              isOpen={openFilter === "country-filter"}
+              onToggle={setOpenFilter}
+              onChange={setSelectedCountry}
+            />
+
+            <FilterDropdown
+              id='trip-type-filter'
+              label='Trip type'
+              value={selectedTripType}
+              defaultLabel='All trip types'
+              options={tripTypeOptions}
+              isOpen={openFilter === "trip-type-filter"}
+              onToggle={setOpenFilter}
+              onChange={setSelectedTripType}
+            />
+
+            <FilterDropdown
+              id='tag-filter'
+              label='Tag'
+              value={selectedTag}
+              defaultLabel='All tags'
+              options={tagOptions}
+              isOpen={openFilter === "tag-filter"}
+              onToggle={setOpenFilter}
+              onChange={setSelectedTag}
+            />
+
+            <FilterDropdown
+              id='sort-filter'
+              label='Sort by'
+              value={selectedSort}
+              defaultLabel='Newest first'
+              options={SORT_OPTIONS}
+              isOpen={openFilter === "sort-filter"}
+              onToggle={setOpenFilter}
+              onChange={setSelectedSort}
+              showDefaultOption={false}
+            />
+
+            <button type='button' onClick={clearFilters} disabled={!hasActiveFilters}>
+              Clear filters
+            </button>
+          </div>
+        </div>
+
+        {activeFilters.length > 0 && (
+          <ul className={classes.activeFilters} aria-label='Active filters'>
+            {activeFilters.map((filter) => (
+              <li key={filter.id}>
+                <button type='button' onClick={filter.reset}>
+                  <span>{filter.label}:</span>
+                  <strong>{filter.value}</strong>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       <div className={classes.resultsHeader}>
         <p>

@@ -5,18 +5,39 @@
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   gap: var(--size-5);
   padding: clamp(2rem, 7vw, 5rem);
   border: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
   border-radius: 8px;
-  background:
+  background-image:
     linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-paper) 92%, var(--color-sun)),
-      color-mix(in srgb, var(--color-mist) 86%, var(--color-paper))
-    );
+      90deg,
+      color-mix(in srgb, var(--color-paper) 74%, transparent) 0%,
+      color-mix(in srgb, var(--color-paper) 52%, transparent) 56%,
+      color-mix(in srgb, var(--color-paper) 18%, transparent) 100%
+    ),
+    url("/images/site/desert-road.png");
+  background-position: center;
+  background-size: cover;
   box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--color-moss) 14%, transparent);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--color-moss) 8%, transparent)
+  );
+  pointer-events: none;
 }
 
 .eyebrow {
