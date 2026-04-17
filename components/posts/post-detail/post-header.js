@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useMemo } from "react";
 import TravelMap from "../../maps/travel-map";
 import classes from "../../../styles/post-header.module.css";
 
@@ -12,6 +13,7 @@ function PostHeader(props) {
   });
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
   const visibleTags = tags?.slice(0, 4) || [];
+  const mapPlaces = useMemo(() => [post], [post]);
 
   return (
     <header className={classes.header}>
@@ -34,7 +36,7 @@ function PostHeader(props) {
           <div className={classes.mapPanel}>
             <p>Location</p>
             <div className={classes.map} aria-label={`Map showing ${place}`}>
-              <TravelMap places={[post]} focused />
+              <TravelMap places={mapPlaces} focused />
             </div>
           </div>
         )}

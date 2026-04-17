@@ -36,7 +36,7 @@
   max-width: 12ch;
   margin: 0;
   color: var(--color-moss);
-  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  font-size: 3.25rem;
   line-height: 0.95;
 }
 
@@ -44,7 +44,7 @@
   max-width: 42rem;
   margin: 0;
   color: var(--color-grey-700);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: 1.15rem;
   line-height: 1.7;
 }
 
@@ -111,8 +111,26 @@
     padding: var(--size-8) 0;
   }
 
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
   .primaryAction,
   .secondaryAction {
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 4.75rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
   }
 }
