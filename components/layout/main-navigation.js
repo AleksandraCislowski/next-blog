@@ -38,7 +38,7 @@ function MainNavigation() {
       >
         <ul>
           <li>
-            <Link href='/#highlights' onClick={closeMenu}>
+            <Link href='/#hero' onClick={closeMenu}>
               Highlights
             </Link>
           </li>

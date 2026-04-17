@@ -4,7 +4,7 @@ import coastalScene from "../../public/images/site/coastal-scene.png";
 
 function Hero() {
   return (
-    <section className={classes.hero}>
+    <section id='hero' className={classes.hero}>
       <Image
         className={classes.image}
         src={coastalScene}
