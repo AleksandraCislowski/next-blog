@@ -14,17 +14,44 @@ function PostHeader(props) {
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
   const visibleTags = tags?.slice(0, 4) || [];
   const mapPlaces = useMemo(() => [post], [post]);
+  const fieldNotes = [
+    { label: "Place", value: place },
+    { label: "Region", value: location?.region },
+    { label: "Trip type", value: tripType },
+    { label: "Read", value: readingTime ? `${readingTime} min` : "" },
+  ].filter((item) => item.value);
 
   return (
     <header className={classes.header}>
-      <div className={classes.copy}>
+      <div className={classes.intro}>
         <p className={classes.kicker}>{place || "Travel note"}</p>
         <h1>{title}</h1>
-        <div className={classes.meta}>
-          <time>{formattedDate}</time>
-          {readingTime && <span>{readingTime} min read</span>}
-          {tripType && <span>{tripType}</span>}
-        </div>
+      </div>
+      <div className={classes.image}>
+        <Image
+          src={imagePath}
+          alt={title}
+          fill
+          priority
+          quality={90}
+          sizes='(min-width: 768px) 42vw, 100vw'
+        />
+      </div>
+      <div className={classes.details}>
+        <dl className={classes.fieldNotes} aria-label='Travel note summary'>
+          <div>
+            <dt>Date</dt>
+            <dd>
+              <time dateTime={date}>{formattedDate}</time>
+            </dd>
+          </div>
+          {fieldNotes.map((item) => (
+            <div key={item.label}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
         {visibleTags.length > 0 && (
           <ul className={classes.tags} aria-label={`Tags for ${title}`}>
             {visibleTags.map((tag) => (
@@ -40,16 +67,6 @@ function PostHeader(props) {
             </div>
           </div>
         )}
-      </div>
-      <div className={classes.image}>
-        <Image
-          src={imagePath}
-          alt={title}
-          fill
-          priority
-          quality={90}
-          sizes='(min-width: 768px) 42vw, 100vw'
-        />
       </div>
     </header>
   );
