@@ -4,6 +4,8 @@ Elsewhere Log is a travel journal rebuilt into a polished portfolio product. It 
 
 The goal was not only to refresh the UI. I wanted to take an older project and turn it into something that feels intentional: visually branded, easy to browse, accessible, SEO-friendly, and practical enough for regular publishing.
 
+Live site: [blog.aleksandracislowski.com](https://blog.aleksandracislowski.com)
+
 ## Why This Project Matters
 
 Elsewhere Log connects two things I care about: travel and building useful tools. It gives me a place to publish travel notes, but it also shows how I approach frontend work in a real product context:
