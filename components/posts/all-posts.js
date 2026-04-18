@@ -301,6 +301,9 @@ function AllPosts(props) {
     selectedCountry !== ALL_FILTER ||
     selectedTripType !== ALL_FILTER ||
     selectedTag !== ALL_FILTER;
+  const activeFilterSummary = activeFilters
+    .map((filter) => `${filter.label.toLowerCase()} "${filter.value}"`)
+    .join(", ");
 
   function clearFilters() {
     setSearchTerm("");
@@ -425,8 +428,20 @@ function AllPosts(props) {
         <PostsGrid posts={filteredPosts} />
       ) : (
         <div className={classes.emptyState}>
-          <h2>No notes match these filters.</h2>
-          <p>Reset the archive and start from a wider route.</p>
+          <p className={classes.emptyKicker}>No route found</p>
+          <h2>No notes match this path.</h2>
+          <p>
+            {activeFilterSummary
+              ? `Nothing matched ${activeFilterSummary}. Try removing one stop from the route.`
+              : "Try widening the route or clearing the archive filters."}
+          </p>
+          {activeFilters.length > 0 && (
+            <ul className={classes.emptyHints} aria-label='Filters currently blocking results'>
+              {activeFilters.map((filter) => (
+                <li key={filter.id}>{filter.label}</li>
+              ))}
+            </ul>
+          )}
           <button type='button' onClick={clearFilters}>
             Show all notes
           </button>

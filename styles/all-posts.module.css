@@ -371,7 +371,19 @@
 .emptyState {
   max-width: 42rem;
   margin: var(--size-8) auto;
+  border: 1px solid color-mix(in srgb, var(--color-moss) 14%, transparent);
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--color-mist) 52%, var(--color-paper));
+  padding: var(--size-8);
   text-align: center;
+}
+
+.emptyKicker {
+  margin: 0 0 var(--size-2);
+  color: var(--color-primary-500);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .emptyState h2 {
@@ -384,6 +396,25 @@
   color: var(--color-grey-600);
   font-size: var(--size-5);
   margin: var(--size-3) 0 var(--size-5);
+}
+
+.emptyHints {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--size-2);
+  list-style: none;
+  margin: 0 0 var(--size-5);
+  padding: 0;
+}
+
+.emptyHints li {
+  border: 1px solid color-mix(in srgb, var(--color-sage) 42%, transparent);
+  border-radius: 999px;
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: var(--size-1) var(--size-3);
 }
 
 @media (min-width: 768px) {
