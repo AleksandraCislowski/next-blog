@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

@@ -2,15 +2,16 @@
 
 Use `post-template.md` as the starting point for every new travel note.
 
+For the full publishing workflow, see `docs/content-workflow.md`.
+
 ## How To Add A Post
 
-1. Copy `templates/post-template.md`.
-2. Paste it into `posts/` with a lowercase slug file name, for example `porto.md`.
-3. Create a matching image folder in `public/images/posts/`, for example `public/images/posts/porto/`.
-4. Add the cover image listed in `image` to that folder.
-5. Add every inline image referenced in the markdown body to the same folder.
-6. Fill in the frontmatter fields.
-7. Set `isFeatured: true` only when the post should appear in Highlights.
+1. Run `npm run new-post -- "Place Name"`.
+2. Add the generated images to `public/images/posts/[post-slug]/`.
+3. Fill in the frontmatter fields.
+4. Set `isFeatured: true` only when the post should appear in Highlights.
+
+You can still copy `templates/post-template.md` manually if you prefer.
 
 ## Frontmatter Fields
 
