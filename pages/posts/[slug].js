@@ -40,8 +40,8 @@ function getAdjacentPosts(currentPost, allPosts) {
   }
 
   return {
-    previousPost: allPosts[currentIndex - 1] || null,
-    nextPost: allPosts[currentIndex + 1] || null,
+    nextPost: allPosts[currentIndex - 1] || null,
+    previousPost: allPosts[currentIndex + 1] || null,
   };
 }
 
