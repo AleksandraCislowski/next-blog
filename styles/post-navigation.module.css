@@ -50,6 +50,14 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .next {
+    grid-column: 1;
+  }
+
+  .previous {
+    grid-column: 2;
+  }
+
   .link strong {
     font-size: var(--size-6);
   }
