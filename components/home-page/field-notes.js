@@ -1,16 +1,20 @@
-import Link from "next/link";
-import classes from "../../styles/field-notes.module.css";
+import Link from 'next/link';
+import classes from '../../styles/field-notes.module.css';
 
 function FieldNotes(props) {
   const { posts } = props;
-  const countries = new Set(posts.map((post) => post.location?.country).filter(Boolean));
-  const cities = new Set(posts.map((post) => post.location?.city).filter(Boolean));
+  const countries = new Set(
+    posts.map((post) => post.location?.country).filter(Boolean),
+  );
+  const cities = new Set(
+    posts.map((post) => post.location?.city).filter(Boolean),
+  );
   const latestPost = posts[0];
 
   return (
     <section className={classes.notes} aria-labelledby='field-notes-heading'>
       <div className={classes.copy}>
-        <p>Field notes</p>
+        <p>All notes</p>
         <h2 id='field-notes-heading'>A quick read on the archive so far.</h2>
       </div>
       <dl className={classes.stats}>
@@ -30,9 +34,7 @@ function FieldNotes(props) {
       <div className={classes.latest}>
         <span>Most recent</span>
         {latestPost && (
-          <Link href={`/posts/${latestPost.slug}`}>
-            {latestPost.title}
-          </Link>
+          <Link href={`/posts/${latestPost.slug}`}>{latestPost.title}</Link>
         )}
       </div>
     </section>

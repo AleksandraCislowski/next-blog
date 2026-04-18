@@ -11,13 +11,16 @@ function PostNavigation(props) {
   return (
     <nav className={classes.navigation} aria-label='Post navigation'>
       {nextPost && (
-        <Link href={`/posts/${nextPost.slug}`} className={classes.link}>
+        <Link href={`/posts/${nextPost.slug}`} className={`${classes.link} ${classes.next}`}>
           <span>Next note</span>
           <strong>{nextPost.title}</strong>
         </Link>
       )}
       {previousPost && (
-        <Link href={`/posts/${previousPost.slug}`} className={classes.link}>
+        <Link
+          href={`/posts/${previousPost.slug}`}
+          className={`${classes.link} ${classes.previous}`}
+        >
           <span>Previous note</span>
           <strong>{previousPost.title}</strong>
         </Link>
