@@ -1,7 +1,7 @@
 ---
-title: "Uppsala (Sweden)"
-date: "2022-06-11"
-addedDate: "2022-06-12"
+title: 'Uppsala (Sweden)'
+date: '2022-06-11'
+addedDate: '2022-06-12'
 image: uppsala1.jpg
 city: Uppsala
 country: Sweden
@@ -16,7 +16,7 @@ tags:
   - history
   - cathedral
 excerpt: A slow day in Uppsala, moving between castle views, university history, Linnaeus, the cathedral, runestones, riverside details, and a city that feels both scholarly and quietly green.
-isFeatured: true
+isFeatured: false
 ---
 
 Uppsala is one of those Swedish cities that feels calm at first, and then slowly reveals how much history it is carrying. It is close enough to Stockholm for an easy day trip, but the mood is completely different: more spacious, more academic, and full of quiet details that make you slow down.
