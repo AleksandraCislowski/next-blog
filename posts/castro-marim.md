@@ -1,6 +1,7 @@
 ---
 title: "Castro Marim (Portugal)"
 date: "2023-01-02"
+addedDate: "2023-01-03"
 image: castro1.jpg
 city: Castro Marim
 country: Portugal

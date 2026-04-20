@@ -54,6 +54,7 @@ const today = new Date().toISOString().slice(0, 10);
 const postContent = template
   .replace('title: "Place Name (Country)"', `title: "${title} (Country)"`)
   .replace('date: "YYYY-MM-DD"', `date: "${today}"`)
+  .replace('addedDate: "YYYY-MM-DD"', `addedDate: "${today}"`)
   .replace("image: cover-image.jpg", `image: ${slug}1.jpg`)
   .replace("city: Place Name", `city: ${title}`)
   .replace("![Descriptive image alt text](image-2.jpg)", `![Descriptive image alt text](${slug}2.jpg)`)

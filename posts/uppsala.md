@@ -1,6 +1,7 @@
 ---
 title: "Uppsala (Sweden)"
 date: "2022-06-11"
+addedDate: "2022-06-12"
 image: uppsala1.jpg
 city: Uppsala
 country: Sweden

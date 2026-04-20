@@ -64,6 +64,7 @@ Every post should include:
 ---
 title: "Porto Weekend (Portugal)"
 date: "2026-04-18"
+addedDate: "2026-04-20"
 image: porto-weekend1.jpg
 city: Porto
 country: Portugal
@@ -84,7 +85,8 @@ isFeatured: false
 ## What Each Field Does
 
 - `title`: Used on the post page, cards, SEO title, and related-post cards.
-- `date`: Used for sorting, display, sitemap metadata, and article SEO.
+- `date`: Travel date used for archive sorting, display, sitemap metadata, and article SEO.
+- `addedDate`: Date the post was added. Used for the homepage "Most recent" link.
 - `image`: Cover image for cards, post header, and social preview.
 - `city`, `country`, `region`: Used in cards, field notes, filters, stats, maps, and search.
 - `coordinates.lat`, `coordinates.lng`: Adds the post to the homepage map and post map.

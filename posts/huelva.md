@@ -1,6 +1,7 @@
 ---
 title: "Huelva (Spain)"
 date: "2022-12-23"
+addedDate: "2022-12-24"
 image: huelva1.jpg
 city: Huelva
 country: Spain

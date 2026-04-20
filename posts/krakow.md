@@ -1,6 +1,7 @@
 ---
 title: "Kraków/Cracow (Poland)"
 date: "2023-06-27"
+addedDate: "2023-06-28"
 image: krakow1.jpg
 city: Kraków
 country: Poland

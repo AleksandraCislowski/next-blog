@@ -1,6 +1,7 @@
 ---
 title: "Świeradów-Zdrój (Poland)"
 date: "2023-07-05"
+addedDate: "2023-07-06"
 image: zdroj1.jpg
 city: Świeradów-Zdrój
 country: Poland

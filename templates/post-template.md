@@ -1,6 +1,7 @@
 ---
 title: "Place Name (Country)"
 date: "YYYY-MM-DD"
+addedDate: "YYYY-MM-DD"
 image: cover-image.jpg
 city: Place Name
 country: Country

@@ -1,6 +1,7 @@
 ---
 title: "Seville (Spain)"
 date: "2023-01-05"
+addedDate: "2023-01-06"
 image: seville1.jpg
 city: Seville
 country: Spain

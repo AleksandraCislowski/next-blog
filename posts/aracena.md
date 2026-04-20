@@ -1,6 +1,7 @@
 ---
 title: "Aracena (Spain)"
 date: "2022-12-27"
+addedDate: "2022-12-28"
 image: aracena1.jpg
 city: Aracena
 country: Spain

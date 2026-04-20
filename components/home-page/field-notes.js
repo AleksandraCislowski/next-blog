@@ -9,7 +9,16 @@ function FieldNotes(props) {
   const cities = new Set(
     posts.map((post) => post.location?.city).filter(Boolean),
   );
-  const latestPost = posts[0];
+  const latestPost = posts.reduce((latestPostSoFar, post) => {
+    if (!latestPostSoFar) {
+      return post;
+    }
+
+    const latestAddedDate = latestPostSoFar.addedDate || latestPostSoFar.date;
+    const postAddedDate = post.addedDate || post.date;
+
+    return postAddedDate > latestAddedDate ? post : latestPostSoFar;
+  }, null);
 
   return (
     <section className={classes.notes} aria-labelledby='field-notes-heading'>

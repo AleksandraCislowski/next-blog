@@ -1,6 +1,7 @@
 ---
 title: 'Palos (Spain)'
 date: '2022-12-29'
+addedDate: '2022-12-30'
 image: palos1.jpg
 city: Palos de la Frontera
 country: Spain
