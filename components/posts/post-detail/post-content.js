@@ -5,6 +5,10 @@ import ReactMarkdown from "react-markdown";
 import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
 
+const imagePositions = {
+  "wroclaw/wroclaw4.JPG": "center 20%",
+};
+
 function PostContent(props) {
   const { post, relatedPosts, previousPost, nextPost } = props;
 
@@ -16,6 +20,7 @@ function PostContent(props) {
         const image = node.children[0];
         const imageAlt = image.properties.alt || image.alt || "";
         const imageSrc = image.properties.src;
+        const imagePosition = imagePositions[`${post.slug}/${imageSrc}`];
 
         return (
           <div className={classes.image}>
@@ -25,6 +30,7 @@ function PostContent(props) {
               fill
               quality={90}
               sizes='(min-width: 768px) 48rem, 90vw'
+              style={imagePosition ? { objectPosition: imagePosition } : undefined}
             />
             {imageAlt && <span>{imageAlt}</span>}
           </div>
