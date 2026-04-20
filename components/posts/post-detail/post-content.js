@@ -4,10 +4,7 @@ import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
-
-const imagePositions = {
-  "wroclaw/wroclaw4.JPG": "center 20%",
-};
+import { getPostImagePosition } from "../../../lib/post-image-positions";
 
 function PostContent(props) {
   const { post, relatedPosts, previousPost, nextPost } = props;
@@ -20,7 +17,7 @@ function PostContent(props) {
         const image = node.children[0];
         const imageAlt = image.properties.alt || image.alt || "";
         const imageSrc = image.properties.src;
-        const imagePosition = imagePositions[`${post.slug}/${imageSrc}`];
+        const imagePosition = getPostImagePosition(post.slug, imageSrc);
 
         return (
           <div className={classes.image}>
