@@ -26,8 +26,6 @@ The city sits on the Oder River, with islands, bridges, and water shaping the wa
 
 I love how the city can move between different moods without losing itself. One moment it is all market-square facades and old-town energy; the next it is a wide view from Sky Tower, a quiet stretch of green water, or a tiny bronze dwarf waiting near the pavement as if it has always been part of the plan.
 
-![Wrocław Market Square with the Old Town Hall towers](wroclaw1.JPG)
-
 The Market Square is the kind of place that immediately reminds me why I keep coming back. It has color, movement, Gothic details, cafes, flowers, and that warm city-center feeling where every direction looks like a good direction to walk.
 
 ## Above the City
