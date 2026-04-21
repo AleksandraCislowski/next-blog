@@ -6,8 +6,36 @@ import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
 import { getPostImagePosition } from "../../../lib/post-image-positions";
 
+function getFullYearsSince(dateString, now = new Date()) {
+  const [startYear, startMonth, startDay] = dateString.split("-").map(Number);
+
+  if (!startYear || !startMonth || !startDay) {
+    return "";
+  }
+
+  let years = now.getFullYear() - startYear;
+  const currentMonth = now.getMonth() + 1;
+  const currentDay = now.getDate();
+
+  if (
+    currentMonth < startMonth ||
+    (currentMonth === startMonth && currentDay < startDay)
+  ) {
+    years -= 1;
+  }
+
+  return Math.max(0, years);
+}
+
+function resolveDynamicContent(content) {
+  return content.replace(/\{\{yearsSince:(\d{4}-\d{2}-\d{2})\}\}/g, (_, date) =>
+    getFullYearsSince(date)
+  );
+}
+
 function PostContent(props) {
   const { post, relatedPosts, previousPost, nextPost } = props;
+  const content = resolveDynamicContent(post.content);
 
   const customRenderers = {
     p(paragraph) {
@@ -41,7 +69,7 @@ function PostContent(props) {
     <article className={classes.content}>
       <PostHeader post={post} />
       <div className={classes.body}>
-        <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
+        <ReactMarkdown components={customRenderers}>{content}</ReactMarkdown>
       </div>
       <PostNavigation previousPost={previousPost} nextPost={nextPost} />
       <RelatedPosts posts={relatedPosts} />
