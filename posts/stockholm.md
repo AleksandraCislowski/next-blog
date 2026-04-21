@@ -55,13 +55,13 @@ The winter version of the city had a completely different softness. Snow, blue e
 
 ## Wooden Corners
 
-One of the best surprises was how easily Stockholm can shift from capital-city scale into something much smaller and older. The red wooden buildings, garden paths, fences, and rocky ground made this part of the day feel almost rural.
+One of the best surprises was how easily Stockholm can shift from capital-city scale into something much smaller and older. At Skansen, the red wooden buildings, garden paths, fences, and rocky ground made this part of the day feel almost rural.
 
-![A small red wooden house in Stockholm](stockholm7.jpg)
+![A small red wooden house at Skansen](stockholm7.jpg)
 
-This little house felt like a pause in the middle of the city. It had that very Swedish balance of simplicity, practicality, and charm.
+This little house felt like a pause in the middle of the city. Skansen has that very Swedish balance of simplicity, practicality, and charm, with old buildings gathered into something that feels both curated and alive.
 
-![A reindeer resting among trees in Stockholm](stockholm8.jpg)
+![A reindeer resting among trees at Skansen](stockholm8.jpg)
 
 The reindeer made the walk feel unexpectedly northern. It was a quiet detail, but it changed the mood completely, pulling the city closer to forest and folklore.
 
@@ -93,9 +93,9 @@ Back in the city, the equestrian statue and grand facade brought the walk into a
 
 The smaller sculptures along the waterfront made the route feel less predictable. They worked like little pauses between the bigger views.
 
-![A quiet lake view near Stockholm](stockholm15.jpg)
+![A quiet lake view in Vinterviken](stockholm15.jpg)
 
-This quieter water view had a different feeling from the city quays. It was still Stockholm, but softer, greener, and more open around the edges.
+This quieter water view in the Vinterviken area had a different feeling from the city quays. It was still Stockholm, but softer, greener, and more open around the edges.
 
 ![Swedish flag on a boat in Stockholm](stockholm16.jpg)
 
@@ -103,15 +103,15 @@ The boat ride gave the day its clearest sense of movement. Wind, bright water, a
 
 ## Sculpture Garden
 
-Another side of Stockholm came through the sculpture garden: more playful, more expressive, and full of water, stone, trees, and figures placed in the landscape.
+Another side of Stockholm came through Millesgården: more playful, more expressive, and full of water, stone, trees, and figures placed in the landscape.
 
 ![A tiny decorated doorway in a tree trunk](stockholm17.jpg)
 
 This tiny doorway in a tree trunk was one of my favorite small finds. It had no grand importance, but it made the walk feel imaginative and a little secret.
 
-![Fountain sculptures in a Stockholm garden](stockholm18.jpg)
+![Fountain sculptures at Millesgården](stockholm18.jpg)
 
-The fountain sculptures gave the garden movement. Water, bronze figures, steps, and trees made the space feel staged, but still relaxed enough to wander through slowly.
+The fountain sculptures at Millesgården gave the garden movement. Water, bronze figures, steps, and trees made the space feel staged, but still relaxed enough to wander through slowly.
 
 ![A courtyard fountain in Stockholm](stockholm19.jpg)
 
@@ -137,4 +137,4 @@ The jellyfish shapes made the space feel underwater as much as frozen. It was to
 
 Ending there made the Stockholm memories feel nicely mixed: city hall gold, red wooden houses, waterfront air, sculpture gardens, boat light, snow, and then a room made of ice and blue light.
 
-Stockholm stayed with me because it never felt like only one kind of city. It was capital, harbor, museum day, winter walk, summer garden, boat ride, and playful detail all at once. That range is what made the visit feel full.
+Stockholm stayed with me because it never felt like only one kind of city. It is capital, harbor, museum day, winter walk, summer garden, boat ride, and playful detail all at once. That range is what made the experience feel full. This city has many things to offer, that's for sure!
