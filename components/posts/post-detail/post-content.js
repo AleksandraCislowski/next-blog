@@ -4,6 +4,7 @@ import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
+import { getBlurDataURL } from "../../../lib/image-placeholder";
 import { getPostImagePosition } from "../../../lib/post-image-positions";
 
 function getFullYearsSince(dateString, now = new Date()) {
@@ -53,7 +54,9 @@ function PostContent(props) {
               src={`/images/posts/${post.slug}/${imageSrc}`}
               alt={imageAlt}
               fill
-              quality={90}
+              placeholder='blur'
+              blurDataURL={getBlurDataURL()}
+              quality={80}
               sizes='(min-width: 768px) 48rem, 90vw'
               style={imagePosition ? { objectPosition: imagePosition } : undefined}
             />

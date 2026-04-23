@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getBlurDataURL } from "../../lib/image-placeholder";
 import classes from "../../styles/post-item.module.css";
 
 function PostItem(props) {
@@ -26,7 +27,8 @@ function PostItem(props) {
             alt={title}
             fill
             priority={priority}
-            unoptimized
+            placeholder='blur'
+            blurDataURL={getBlurDataURL()}
             sizes='(min-width: 1024px) 31vw, (min-width: 640px) 45vw, 100vw'
           />
         </div>

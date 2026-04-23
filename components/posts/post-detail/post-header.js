@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useMemo } from "react";
 import TravelMap from "../../maps/travel-map";
+import { getBlurDataURL } from "../../../lib/image-placeholder";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
@@ -33,7 +34,9 @@ function PostHeader(props) {
           alt={title}
           fill
           priority
-          quality={90}
+          placeholder='blur'
+          blurDataURL={getBlurDataURL({ width: 21, height: 13 })}
+          quality={85}
           sizes='(min-width: 768px) 42vw, 100vw'
         />
       </div>
