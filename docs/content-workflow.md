@@ -86,7 +86,7 @@ isFeatured: false
 
 - `title`: Used on the post page, cards, SEO title, and related-post cards.
 - `date`: Travel date used for archive sorting, display, sitemap metadata, and article SEO.
-- `addedDate`: Date the post was added. Used for the homepage "Most recent" link.
+- `addedDate`: Date the post was added. Used for the homepage "Recently added" link.
 - `image`: Cover image for cards, post header, and social preview.
 - `city`, `country`, `region`: Used in cards, field notes, filters, stats, maps, and search.
 - `coordinates.lat`, `coordinates.lng`: Adds the post to the homepage map and post map.

@@ -41,7 +41,7 @@ function FieldNotes(props) {
         </div>
       </dl>
       <div className={classes.latest}>
-        <span>Most recent</span>
+        <span>Recently added</span>
         {latestPost && (
           <Link href={`/posts/${latestPost.slug}`}>{latestPost.title}</Link>
         )}

@@ -5,8 +5,8 @@ import PostsGrid from "./posts-grid";
 const ALL_FILTER = "all";
 
 const SORT_OPTIONS = [
-  { value: "newest", label: "Newest first" },
-  { value: "oldest", label: "Oldest first" },
+  { value: "newest", label: "Latest trip first" },
+  { value: "oldest", label: "Earliest trip first" },
   { value: "place", label: "Place A-Z" },
   { value: "reading-time", label: "Shortest read" },
 ];
@@ -386,7 +386,7 @@ function AllPosts(props) {
               id='sort-filter'
               label='Sort by'
               value={selectedSort}
-              defaultLabel='Newest first'
+              defaultLabel='Latest trip first'
               options={SORT_OPTIONS}
               isOpen={openFilter === "sort-filter"}
               onToggle={setOpenFilter}

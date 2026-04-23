@@ -16,8 +16,8 @@ You can still copy `templates/post-template.md` manually if you prefer.
 ## Frontmatter Fields
 
 - `title`: Display title for the post page and cards.
-- `date`: Travel date in `YYYY-MM-DD` format.
-- `addedDate`: Date the post was added in `YYYY-MM-DD` format. Used for the homepage "Most recent" link.
+- `date`: Travel date in `YYYY-MM-DD` format. This drives trip chronology in the archive.
+- `addedDate`: Date the post was added in `YYYY-MM-DD` format. Used for the homepage "Recently added" link.
 - `image`: Cover image file name from the post image folder.
 - `city`, `country`, `region`: Used by cards, filters, archive stats, and maps.
 - `coordinates.lat`, `coordinates.lng`: Used by the homepage map and post map.
