@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { useMemo } from "react";
 import TravelMap from "../../maps/travel-map";
+import LoadingImage from "../../ui/loading-image";
 import { getBlurDataURL } from "../../../lib/image-placeholder";
 import classes from "../../../styles/post-header.module.css";
 
@@ -29,7 +29,7 @@ function PostHeader(props) {
         <h1>{title}</h1>
       </div>
       <div className={classes.image}>
-        <Image
+        <LoadingImage
           src={imagePath}
           alt={title}
           fill

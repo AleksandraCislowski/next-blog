@@ -1,9 +1,9 @@
-import Image from "next/image";
 import classes from "../../../styles/post-content.module.css";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
+import LoadingImage from "../../ui/loading-image";
 import { getBlurDataURL } from "../../../lib/image-placeholder";
 import { getPostImagePosition } from "../../../lib/post-image-positions";
 
@@ -50,7 +50,7 @@ function PostContent(props) {
 
         return (
           <div className={classes.image}>
-            <Image
+            <LoadingImage
               src={`/images/posts/${post.slug}/${imageSrc}`}
               alt={imageAlt}
               fill

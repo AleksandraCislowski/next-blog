@@ -1,0 +1,22 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-paper) 76%, transparent),
+      color-mix(in srgb, var(--color-mist) 88%, var(--color-paper))
+    );
+  pointer-events: none;
+}
+
+.loaderImage {
+  display: block;
+  width: min(5.5rem, 32vw);
+  height: auto;
+  filter: drop-shadow(0 0.5rem 1rem color-mix(in srgb, var(--color-ink) 16%, transparent));
+}

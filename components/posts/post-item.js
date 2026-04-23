@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import LoadingImage from "../ui/loading-image";
 import { getBlurDataURL } from "../../lib/image-placeholder";
 import classes from "../../styles/post-item.module.css";
 
@@ -22,7 +22,7 @@ function PostItem(props) {
     <li className={classes.post}>
       <Link href={linkPath} className={classes.link}>
         <div className={classes.image}>
-          <Image
+          <LoadingImage
             src={postImagePath}
             alt={title}
             fill
