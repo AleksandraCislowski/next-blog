@@ -110,6 +110,7 @@ Before committing a new post:
 - The markdown file is in `posts/`.
 - The image folder exists in `public/images/posts/[post-slug]/`.
 - The cover image listed in `image` exists.
+- The cover image is not reused again inside the post body.
 - Every inline markdown image exists.
 - Every image has descriptive alt text.
 - Coordinates are filled in.
