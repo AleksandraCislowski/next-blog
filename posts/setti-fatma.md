@@ -170,9 +170,9 @@ Again and again, water appeared as both decoration and infrastructure. It cooled
 
 The wooden bridges made the riverfront feel even more active. People were always crossing, choosing a place to sit, or following the sound of water deeper into the village.
 
-![River seating and wooden bridge under willow trees](setti-fatma40.jpg)
+![River seating and wooden bridge under willow trees](setti-fatma39.jpg)
 
-I liked how the village made space around the water. It was commercial, yes, but still charming: rugs laid out close to the stream, little bridges crossing from one side to the other, and people settling into the shade for tea or lunch.
+This was the softer riverfront side of Setti Fatma: willow trees, shade cloth, pink umbrellas, patterned cushions, and a narrow wooden bridge over the water.
 
 ![Ourika River flowing through Setti Fatma](setti-fatma41.jpg)
 
@@ -194,9 +194,9 @@ The waterfall was not only pretty; it felt refreshing in a physical way. After t
 
 The rocks around the waterfall made the valley feel steep and enclosed. You understand quickly that Setti Fatma is not just a village with restaurants; it is a village built into a serious mountain landscape.
 
-![Small waterfall pool between rocks](setti-fatma39.jpg)
+![Rocky waterfall pool in Setti Fatma](setti-fatma40.jpg)
 
-The smaller falls were quieter and more intimate, with water dropping into clear pools between boulders.
+This view showed the rougher side of the waterfall path: dark rock, bright water, boulders, and people moving carefully through the gorge.
 
 ## What Stayed With Me
 
