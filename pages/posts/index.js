@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import AllPosts from "../../components/posts/all-posts";
-import { getAllPosts } from "../../lib/posts-util";
+import { getAllPostSummaries } from "../../lib/posts-util";
 import Seo from "../../components/seo/seo";
 
 function AllPostsPage(props) {
@@ -18,7 +18,7 @@ function AllPostsPage(props) {
 }
 
 export function getStaticProps() {
-  const allPosts = getAllPosts();
+  const allPosts = getAllPostSummaries();
 
   return {
     props: {

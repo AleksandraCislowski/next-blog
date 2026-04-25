@@ -1,6 +1,10 @@
 import { Fragment } from "react";
 import PostContent from "../../components/posts/post-detail/post-content";
-import { getAllPosts, getPostData, getPostsFiles } from "../../lib/posts-util";
+import {
+  getAllPostSummaries,
+  getPostData,
+  getPostsFiles,
+} from "../../lib/posts-util";
 import Seo from "../../components/seo/seo";
 import { absoluteUrl, siteConfig } from "../../lib/site-config";
 
@@ -95,7 +99,7 @@ export function getStaticProps(context) {
   const { slug } = params;
 
   const postData = getPostData(slug);
-  const allPosts = getAllPosts();
+  const allPosts = getAllPostSummaries();
   const relatedPosts = getRelatedPosts(postData, allPosts);
   const { previousPost, nextPost } = getAdjacentPosts(postData, allPosts);
 

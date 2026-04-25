@@ -78,14 +78,19 @@
 
 .image {
   position: relative;
-  min-height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
   overflow: hidden;
   border-radius: 8px;
-  background-color: var(--color-mist);
+  background-color: color-mix(in srgb, var(--color-mist) 72%, var(--color-paper));
 }
 
 .image img {
   object-fit: cover;
+  object-position: center center;
 }
 
 .mapPanel {
@@ -133,7 +138,8 @@
   .image {
     grid-column: 2;
     grid-row: 1 / span 2;
-    min-height: 26rem;
+    align-self: center;
+    aspect-ratio: 16 / 10;
   }
 
   .mapPanel {

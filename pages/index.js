@@ -3,7 +3,7 @@ import Hero from "../components/home-page/hero";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import FieldNotes from "../components/home-page/field-notes";
 import PlacesOverview from "../components/home-page/places-overview";
-import { getAllPosts, getFeaturedPosts } from "../lib/posts-util";
+import { getAllPostSummaries, getFeaturedPosts } from "../lib/posts-util";
 import Seo from "../components/seo/seo";
 import { absoluteUrl, siteConfig } from "../lib/site-config";
 
@@ -35,7 +35,7 @@ function HomePage(props) {
 
 export function getStaticProps() {
   const featuredPosts = getFeaturedPosts();
-  const allPosts = getAllPosts();
+  const allPosts = getAllPostSummaries();
 
   return {
     props: {
