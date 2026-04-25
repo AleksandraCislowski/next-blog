@@ -16,7 +16,7 @@ tags:
   - history
   - architecture
 excerpt: A city break in Kraków, moving from Wawel walls and dragon legends to old-town streets, royal gardens, market-square light, and a calmer walk by the Vistula.
-isFeatured: true
+isFeatured: false
 ---
 
 Kraków is one of those cities where the first layer is already beautiful, but the real pleasure is in how many layers sit underneath it. Royal history, dragon legends, Gothic towers, Renaissance details, market-square noise, quiet courtyards, and the Vistula all live very close together.

@@ -17,7 +17,7 @@ tags:
   - winter lights
   - slow travel
 excerpt: A cozy Christmas-time visit to Göteborg, with winter lights, old city details, cinnamon buns, and a magical evening among the decorations and rides at Liseberg.
-isFeatured: true
+isFeatured: false
 ---
 
 Göteborg in December felt like the city had leaned fully into Christmas. It was dark early, the air had that cold coastal edge, and everywhere there were lights, wreaths, trees, and warm windows making the streets feel softer.

@@ -17,7 +17,7 @@ tags:
   - skyline
   - slow travel
 excerpt: A personal return to Wrocław, one of my most beloved cities, with market-square color, Sky Tower views, quiet green water, night reflections, and the city's tiny bronze dwarfs.
-isFeatured: true
+isFeatured: false
 ---
 
 Wrocław is one of my most beloved cities. Some places are easy to admire from a distance, but Wrocław feels closer than that: colorful, playful, a little surprising, and full of details that make even a familiar walk feel new again.
