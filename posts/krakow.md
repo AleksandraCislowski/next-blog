@@ -31,8 +31,6 @@ The Wawel area is a natural place to begin. It gathers so many Kraków associati
 
 The walls make the approach feel ceremonial. Even before you enter any specific building, Wawel has that sense of arrival: stone above the river, paths rising, and the city opening below.
 
-![Wawel walls](krakow3.jpg)
-
 I like how Wawel can feel serious and storybook at the same time. It is historic, but not stiff; the legend is always close enough to keep the mood from becoming too formal.
 
 ![Wawel's dragon sculpture](krakow4.jpg)
