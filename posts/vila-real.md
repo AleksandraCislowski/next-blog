@@ -23,8 +23,6 @@ Vila Real de Santo António sits at the eastern edge of the Algarve, beside the 
 
 The town feels calm and orderly, with broad squares, palm trees, and streets that make the walk easy. It is not trying to compete with the loudest Algarve destinations, and that is part of the charm.
 
-![Palm trees and fountain landscape](vila2.jpg)
-
 The fountain and palms set the tone immediately: bright, relaxed, and made for wandering without a very serious plan.
 
 ## History
