@@ -35,8 +35,6 @@ The center is small and very walkable. Stora gatan, the old main street, has caf
 
 The church ruins are where the age of the place becomes more visible. They sit naturally in the town, not sealed away, which makes the history feel close and quiet.
 
-![Sigtuna park](sigtuna4.jpg)
-
 The park gives the walk a softer pause. Sigtuna is good at this: a historical detail, then a green space, then a lake view, then another small street.
 
 ## History
