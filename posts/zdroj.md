@@ -29,8 +29,6 @@ The heart of the town is the Spa House, built in 1899 after the earlier spring h
 
 I liked that Świeradów-Zdrój does not try to separate its mountain side from its spa side. The promenade, the old resort buildings, and the surrounding slopes all feel like parts of the same story.
 
-![Spa house](zdroj2.jpg)
-
 The Spa House has the kind of facade that makes you stop for a moment before going further. It feels like a reminder that travel used to be slower by design: arrive, walk, drink the water, rest, repeat.
 
 ![Spa house](zdroj3.jpg)
