@@ -56,7 +56,7 @@ function PostContent(props) {
               fill
               placeholder='blur'
               blurDataURL={getBlurDataURL()}
-              quality={80}
+              quality={76}
               sizes='(min-width: 768px) 48rem, 90vw'
               style={imagePosition ? { objectPosition: imagePosition } : undefined}
             />

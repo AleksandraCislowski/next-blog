@@ -29,7 +29,8 @@ function PostItem(props) {
             priority={priority}
             placeholder='blur'
             blurDataURL={getBlurDataURL()}
-            sizes='(min-width: 1024px) 31vw, (min-width: 640px) 45vw, 100vw'
+            quality={72}
+            sizes='(min-width: 1100px) 24rem, (min-width: 640px) 43vw, 90vw'
           />
         </div>
         <div className={classes.content}>
