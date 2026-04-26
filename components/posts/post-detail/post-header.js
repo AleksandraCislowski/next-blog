@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import TravelMap from "../../maps/travel-map";
 import LoadingImage from "../../ui/loading-image";
+import { getCountryFlagBackground } from "../../../lib/country-flags";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
@@ -12,6 +13,7 @@ function PostHeader(props) {
     year: "numeric",
   });
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
+  const countryFlagBackground = getCountryFlagBackground(location?.country);
   const visibleTags = tags?.slice(0, 4) || [];
   const mapPlaces = useMemo(() => [post], [post]);
   const fieldNotes = [
@@ -22,7 +24,14 @@ function PostHeader(props) {
   ].filter((item) => item.value);
 
   return (
-    <header className={classes.header}>
+    <header
+      className={classes.header}
+      style={
+        countryFlagBackground
+          ? { "--post-flag-background": `url(${countryFlagBackground})` }
+          : undefined
+      }
+    >
       <div className={classes.intro}>
         <p className={classes.kicker}>{place || "Travel note"}</p>
         <h1>{title}</h1>
@@ -33,8 +42,8 @@ function PostHeader(props) {
           alt={title}
           fill
           priority
-          quality={95}
-          sizes='(min-width: 1200px) 48vw, (min-width: 768px) 50vw, 100vw'
+          quality={82}
+          sizes='(min-width: 1200px) 38rem, (min-width: 1024px) 46vw, (min-width: 768px) 84vw, 90vw'
         />
       </div>
       <div className={classes.details}>

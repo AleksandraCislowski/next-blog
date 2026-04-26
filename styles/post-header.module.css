@@ -1,14 +1,65 @@
 .header {
+  position: relative;
+  z-index: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--size-6);
   margin-bottom: var(--size-8);
+  padding: var(--size-6);
   padding-bottom: var(--size-8);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-moss) 18%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-moss) 18%, transparent);
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-paper) 92%, white) 0%,
+    color-mix(in srgb, var(--color-mist) 44%, var(--color-paper)) 100%
+  );
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: var(--post-flag-background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(0.95) contrast(0.92);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-paper) 82%, transparent) 0%,
+      color-mix(in srgb, var(--color-paper) 54%, transparent) 16%,
+      color-mix(in srgb, var(--color-paper) 20%, transparent) 34%,
+      color-mix(in srgb, var(--color-paper) 20%, transparent) 66%,
+      color-mix(in srgb, var(--color-paper) 54%, transparent) 84%,
+      color-mix(in srgb, var(--color-paper) 82%, transparent) 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-moss) 12%, transparent) 100%
+    );
+  pointer-events: none;
 }
 
 .intro,
 .details {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--size-4);
@@ -23,10 +74,13 @@
 }
 
 .header h1 {
-  font-size: var(--size-8);
+  font-size: clamp(1.7rem, 8vw, var(--size-8));
   color: var(--color-moss);
   margin: 0;
   line-height: 1.05;
+  overflow-wrap: normal;
+  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .fieldNotes {
@@ -40,7 +94,11 @@
   min-width: 0;
   border: 1px solid color-mix(in srgb, var(--color-moss) 14%, transparent);
   border-radius: 8px;
-  background-color: color-mix(in srgb, var(--color-paper) 72%, var(--color-mist));
+  background-color: color-mix(
+    in srgb,
+    var(--color-paper) 72%,
+    var(--color-mist)
+  );
   padding: var(--size-3);
 }
 
@@ -68,8 +126,13 @@
 }
 
 .tags li {
-  border: 1px solid color-mix(in srgb, var(--color-sage) 45%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-moss) 14%, transparent);
   border-radius: 999px;
+  background-color: color-mix(
+    in srgb,
+    var(--color-paper) 72%,
+    var(--color-mist)
+  );
   color: var(--color-moss);
   font-size: 0.85rem;
   font-weight: 700;
@@ -78,6 +141,7 @@
 
 .image {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +149,11 @@
   min-height: 0;
   overflow: hidden;
   border-radius: 8px;
-  background-color: color-mix(in srgb, var(--color-mist) 72%, var(--color-paper));
+  background-color: color-mix(
+    in srgb,
+    var(--color-mist) 72%,
+    var(--color-paper)
+  );
 }
 
 .image img {
@@ -115,11 +183,58 @@
   background-color: var(--color-mist);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    gap: var(--size-7);
+    padding: var(--size-8);
+    padding-bottom: var(--size-8);
+  }
+
+  .intro {
+    margin-bottom: var(--size-2);
+  }
+
+  .header h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+  }
+
+  .fieldNotes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--size-2);
+  }
+
+  .image {
+    aspect-ratio: 21 / 10;
+    margin: var(--size-2) 0 var(--size-3);
+  }
+
+  .details {
+    margin-top: var(--size-2);
+  }
+
+  .mapPanel {
+    max-width: none;
+    margin-top: var(--size-3);
+  }
+
+  .map {
+    min-height: 15rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1023px) {
+  .fieldNotes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
   .header {
     grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 1fr);
     align-items: stretch;
     gap: var(--size-8);
+    padding: var(--size-8);
+    padding-bottom: 2.5rem;
   }
 
   .intro,
@@ -132,7 +247,7 @@
   }
 
   .header h1 {
-    font-size: var(--size-16);
+    font-size: clamp(3rem, 5vw, var(--size-16));
   }
 
   .image {
@@ -152,5 +267,29 @@
   .map {
     flex: 1;
     min-height: 13rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header::before {
+    background-position: center;
+  }
+
+  .header::after {
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-paper) 82%, transparent) 0%,
+        color-mix(in srgb, var(--color-paper) 42%, transparent) 18%,
+        color-mix(in srgb, var(--color-paper) 18%, transparent) 50%,
+        color-mix(in srgb, var(--color-paper) 42%, transparent) 82%,
+        color-mix(in srgb, var(--color-paper) 82%, transparent) 100%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-paper) 36%, transparent) 0%,
+        transparent 42%,
+        color-mix(in srgb, var(--color-moss) 10%, transparent) 100%
+      );
   }
 }
