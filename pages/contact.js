@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from "next/head";
 import classes from "../styles/contact.module.css";
 import Seo from "../components/seo/seo";
 
@@ -13,11 +14,14 @@ function ContactPage() {
 
   return (
     <Fragment>
+      <Head>
+        <link rel='preload' as='image' href='/images/site/desert-road.jpg' />
+      </Head>
       <Seo
         title='Contact'
         description='Get in touch about travel notes, frontend work, and small useful tools.'
         path='/contact'
-        image='/images/site/desert-road.png'
+        image='/images/site/desert-road.jpg'
       />
       <main className={classes.contact}>
         <section className={classes.hero}>

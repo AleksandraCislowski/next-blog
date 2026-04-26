@@ -20,7 +20,7 @@
       color-mix(in srgb, var(--color-paper) 52%, transparent) 56%,
       color-mix(in srgb, var(--color-paper) 18%, transparent) 100%
     ),
-    url("/images/site/desert-road.png");
+    url("/images/site/desert-road.jpg");
   background-position: center;
   background-size: cover;
   box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--color-moss) 14%, transparent);

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import classes from "../../styles/hero.module.css";
-import coastalScene from "../../public/images/site/coastal-scene.png";
+import coastalScene from "../../public/images/site/coastal-scene.jpg";
 
 function Hero() {
   return (

@@ -18,7 +18,7 @@
       color-mix(in srgb, var(--color-paper) 56%, transparent),
       color-mix(in srgb, var(--color-paper) 42%, transparent)
     ),
-    url("/images/site/alpine-lake.png");
+    url("/images/site/alpine-lake.jpg");
   background-position: center;
   background-size: cover;
   box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--color-moss) 16%, transparent);

@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from "next/head";
 import AllPosts from "../../components/posts/all-posts";
 import { getAllPostSummaries } from "../../lib/posts-util";
 import Seo from "../../components/seo/seo";
@@ -6,11 +7,14 @@ import Seo from "../../components/seo/seo";
 function AllPostsPage(props) {
   return (
     <Fragment>
+      <Head>
+        <link rel='preload' as='image' href='/images/site/alpine-lake.jpg' />
+      </Head>
       <Seo
         title='All Notes'
         description='Browse travel notes by place, story, date, country, and trip type.'
         path='/posts'
-        image='/images/site/alpine-lake.png'
+        image='/images/site/alpine-lake.jpg'
       />
       <AllPosts posts={props.posts} />
     </Fragment>
