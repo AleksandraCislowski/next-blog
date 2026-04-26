@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import TravelMap from "../maps/travel-map";
+import { getCountryFlag } from "../../lib/country-flags";
 import classes from "../../styles/places-overview.module.css";
 
 function PlacesOverview(props) {
@@ -44,7 +45,12 @@ function PlacesOverview(props) {
           {sortedPlaces.map((place) => (
             <li key={place.slug}>
               <Link href={`/posts/${place.slug}`}>
-                <span>{place.location.country}</span>
+                <span className={classes.country}>
+                  <span className={classes.flag} aria-hidden='true'>
+                    {getCountryFlag(place.location.country)}
+                  </span>
+                  {place.location.country}
+                </span>
                 <strong>{place.location.city}</strong>
               </Link>
             </li>
