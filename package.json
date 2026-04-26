@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "new-post": "node scripts/new-post.js"
+    "new-post": "node scripts/new-post.js",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
