@@ -1,5 +1,5 @@
 ---
-title: "Vila Real de Santo António (Portugal)"
+title: "Vila Real de Santo António"
 date: "2023-01-02"
 addedDate: "2023-01-03"
 image: vila1.jpg

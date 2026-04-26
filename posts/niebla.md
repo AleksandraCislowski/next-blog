@@ -1,5 +1,5 @@
 ---
-title: 'Niebla (Spain)'
+title: 'Niebla'
 date: '2022-12-25'
 addedDate: '2026-04-23'
 image: niebla4.JPG

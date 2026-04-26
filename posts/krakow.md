@@ -1,5 +1,5 @@
 ---
-title: 'Kraków (Poland)'
+title: 'Kraków'
 date: '2023-06-27'
 addedDate: '2023-06-28'
 image: krakow1.jpg

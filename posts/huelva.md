@@ -1,5 +1,5 @@
 ---
-title: "Huelva (Spain)"
+title: "Huelva"
 date: "2022-12-23"
 addedDate: "2022-12-24"
 image: huelva1.jpg

@@ -1,5 +1,5 @@
 ---
-title: "Świeradów-Zdrój (Poland)"
+title: "Świeradów-Zdrój"
 date: "2023-07-05"
 addedDate: "2023-07-06"
 image: zdroj1.jpg

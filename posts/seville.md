@@ -1,5 +1,5 @@
 ---
-title: "Seville (Spain)"
+title: "Seville"
 date: "2023-01-05"
 addedDate: "2023-01-06"
 image: seville1.jpg

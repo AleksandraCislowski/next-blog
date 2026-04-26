@@ -1,5 +1,5 @@
 ---
-title: "Sigtuna (Sweden)"
+title: "Sigtuna"
 date: "2022-07-24"
 addedDate: "2022-07-25"
 image: sigtuna1.jpg

@@ -1,5 +1,5 @@
 ---
-title: 'Palos (Spain)'
+title: 'Palos de la Frontera'
 date: '2022-12-29'
 addedDate: '2022-12-30'
 image: palos1.jpg

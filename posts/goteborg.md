@@ -1,5 +1,5 @@
 ---
-title: 'Göteborg (Sweden)'
+title: 'Göteborg'
 date: '2025-12-13'
 addedDate: '2026-04-20'
 image: goteborg1.jpg

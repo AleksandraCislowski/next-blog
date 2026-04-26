@@ -1,5 +1,5 @@
 ---
-title: 'El Rocio (Spain)'
+title: 'El Rocio'
 date: '2022-12-25'
 addedDate: '2026-04-23'
 image: rocio1.JPG

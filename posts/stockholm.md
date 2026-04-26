@@ -1,5 +1,5 @@
 ---
-title: 'Stockholm (Sweden)'
+title: 'Stockholm'
 date: '2023-04-21'
 addedDate: '2026-04-21'
 image: stockholm1.jpg

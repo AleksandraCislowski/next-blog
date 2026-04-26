@@ -1,5 +1,5 @@
 ---
-title: 'Setti Fatma (Morocco)'
+title: 'Setti Fatma'
 date: '2025-10-18'
 addedDate: '2026-04-25'
 image: setti-fatma1.jpg

@@ -1,5 +1,5 @@
 ---
-title: 'Wrocław (Poland)'
+title: 'Wrocław'
 date: '2024-05-30'
 addedDate: '2026-04-20'
 image: wroclaw1.JPG

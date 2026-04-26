@@ -1,5 +1,5 @@
 ---
-title: "Aracena (Spain)"
+title: "Aracena"
 date: "2022-12-27"
 addedDate: "2022-12-28"
 image: aracena1.jpg

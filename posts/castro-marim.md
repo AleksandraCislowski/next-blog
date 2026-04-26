@@ -1,5 +1,5 @@
 ---
-title: "Castro Marim (Portugal)"
+title: "Castro Marim"
 date: "2023-01-02"
 addedDate: "2023-01-03"
 image: castro1.jpg
