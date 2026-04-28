@@ -26,12 +26,20 @@ function parseArgs(argv) {
     dir: "public/images/posts",
     max: 2200,
     quality: 78,
+    slug: null,
     write: false,
   };
 
-  for (const arg of argv) {
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+
     if (arg === "--write") {
       options.write = true;
+    } else if (arg === "--slug") {
+      options.slug = argv[index + 1];
+      index += 1;
+    } else if (arg.startsWith("--slug=")) {
+      options.slug = arg.slice("--slug=".length);
     } else if (arg.startsWith("--dir=")) {
       options.dir = arg.slice("--dir=".length);
     } else if (arg.startsWith("--max=")) {
@@ -47,6 +55,14 @@ function parseArgs(argv) {
 
   if (!Number.isFinite(options.quality) || options.quality < 1 || options.quality > 100) {
     throw new Error("--quality must be between 1 and 100");
+  }
+
+  if (options.slug) {
+    if (options.slug.includes("/") || options.slug.includes("\\") || options.slug === "..") {
+      throw new Error("--slug must be a single post folder name");
+    }
+
+    options.dir = path.join(options.dir, options.slug);
   }
 
   return options;
