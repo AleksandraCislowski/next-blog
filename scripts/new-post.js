@@ -52,7 +52,7 @@ const template = fs.readFileSync(templatePath, "utf8");
 const title = toTitleCase(titleInput);
 const today = new Date().toISOString().slice(0, 10);
 const postContent = template
-  .replace('title: "Place Name (Country)"', `title: "${title} (Country)"`)
+  .replace('title: "Place Name"', `title: "${title}"`)
   .replace('date: "YYYY-MM-DD"', `date: "${today}"`)
   .replace('addedDate: "YYYY-MM-DD"', `addedDate: "${today}"`)
   .replace("image: cover-image.jpg", `image: ${slug}1.jpg`)

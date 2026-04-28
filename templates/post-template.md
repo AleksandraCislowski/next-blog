@@ -1,5 +1,5 @@
 ---
-title: "Place Name (Country)"
+title: "Place Name"
 date: "YYYY-MM-DD"
 addedDate: "YYYY-MM-DD"
 image: cover-image.jpg
