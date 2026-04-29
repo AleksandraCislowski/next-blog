@@ -1,7 +1,7 @@
 ---
-title: "Huelva"
-date: "2022-12-23"
-addedDate: "2022-12-24"
+title: 'Huelva'
+date: '2022-12-23'
+addedDate: '2022-12-24'
 image: huelva1.jpg
 city: Huelva
 country: Spain
@@ -16,7 +16,7 @@ tags:
   - city break
   - coastal city
 excerpt: A coastal city break in Huelva, moving between river light, tiled streets, palm trees, murals, beaches, and the relaxed edges of Andalusia's Costa de la Luz.
-isFeatured: true
+isFeatured: false
 ---
 
 Huelva feels different from the more obvious Andalusian city stops. It is less polished, more coastal, and full of ordinary details: palm trees, tiled buildings, murals, orange trees, marina views, and beaches that pull the day toward the Atlantic.
