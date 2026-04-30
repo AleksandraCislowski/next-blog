@@ -9,6 +9,7 @@ const SORT_OPTIONS = [
   { value: "oldest", label: "Earliest trip first" },
   { value: "place", label: "Place A-Z" },
   { value: "reading-time", label: "Shortest read" },
+  { value: "reading-time-desc", label: "Longest read" },
 ];
 
 function getUniqueOptions(posts, getValue) {
@@ -225,6 +226,10 @@ function AllPosts(props) {
 
       if (selectedSort === "reading-time") {
         return (firstPost.readingTime || 0) - (secondPost.readingTime || 0);
+      }
+
+      if (selectedSort === "reading-time-desc") {
+        return (secondPost.readingTime || 0) - (firstPost.readingTime || 0);
       }
 
       return firstPost.date > secondPost.date ? -1 : 1;
