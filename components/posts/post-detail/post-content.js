@@ -5,7 +5,10 @@ import RelatedPosts from "./related-posts";
 import PostNavigation from "./post-navigation";
 import LoadingImage from "../../ui/loading-image";
 import { getBlurDataURL } from "../../../lib/image-placeholder";
-import { getPostImagePosition } from "../../../lib/post-image-positions";
+import {
+  getPostImageLayout,
+  getPostImagePosition,
+} from "../../../lib/post-image-positions";
 
 function getFullYearsSince(dateString, now = new Date()) {
   const [startYear, startMonth, startDay] = dateString.split("-").map(Number);
@@ -47,9 +50,15 @@ function PostContent(props) {
         const imageAlt = image.properties.alt || image.alt || "";
         const imageSrc = image.properties.src;
         const imagePosition = getPostImagePosition(post.slug, imageSrc);
+        const imageLayout = getPostImageLayout(post.slug, imageSrc);
+        const imageLayoutClass =
+          imageLayout === "portrait" ? classes.imagePortrait : "";
+        const imageClassName = imageLayoutClass
+          ? `${classes.image} ${imageLayoutClass}`
+          : classes.image;
 
         return (
-          <div className={classes.image}>
+          <div className={imageClassName}>
             <LoadingImage
               src={`/images/posts/${post.slug}/${imageSrc}`}
               alt={imageAlt}

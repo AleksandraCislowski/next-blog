@@ -37,6 +37,11 @@
   object-fit: cover;
 }
 
+.content .imagePortrait {
+  aspect-ratio: 3 / 4;
+  max-width: 34rem;
+}
+
 .content .image span {
   position: absolute;
   right: var(--size-3);
