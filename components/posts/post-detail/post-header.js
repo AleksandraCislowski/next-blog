@@ -3,6 +3,7 @@ import Head from "next/head";
 import TravelMap from "../../maps/travel-map";
 import LoadingImage from "../../ui/loading-image";
 import { getCountryFlagBackground } from "../../../lib/country-flags";
+import { getPostImagePosition } from "../../../lib/post-image-positions";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
@@ -15,6 +16,7 @@ function PostHeader(props) {
   });
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
   const countryFlagBackground = getCountryFlagBackground(location?.country);
+  const imagePosition = getPostImagePosition(post.slug, post.image);
   const visibleTags = tags?.slice(0, 4) || [];
   const mapPlaces = useMemo(() => [post], [post]);
   const fieldNotes = [
@@ -51,6 +53,7 @@ function PostHeader(props) {
             priority
             quality={82}
             sizes='(min-width: 1200px) 38rem, (min-width: 1024px) 46vw, (min-width: 768px) 84vw, 90vw'
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
           />
         </div>
         <div className={classes.details}>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import LoadingImage from "../ui/loading-image";
 import { getBlurDataURL } from "../../lib/image-placeholder";
+import { getPostImagePosition } from "../../lib/post-image-positions";
 import classes from "../../styles/post-item.module.css";
 
 function PostItem(props) {
@@ -14,6 +15,7 @@ function PostItem(props) {
   });
 
   const postImagePath = imagePath || `/images/posts/${slug}/${image}`;
+  const imagePosition = getPostImagePosition(slug, image);
   const linkPath = `/posts/${slug}`;
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
   const visibleTags = tags?.slice(0, 3) || [];
@@ -31,6 +33,7 @@ function PostItem(props) {
             blurDataURL={getBlurDataURL()}
             quality={72}
             sizes='(min-width: 1100px) 24rem, (min-width: 640px) 43vw, 90vw'
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
           />
         </div>
         <div className={classes.content}>
