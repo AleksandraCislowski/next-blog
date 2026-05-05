@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import classes from "../../styles/travel-map.module.css";
 
@@ -6,6 +6,28 @@ const TILE_LAYER_URL =
   "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 const TILE_ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
+function isChunkLoadError(error) {
+  return (
+    error?.name === "ChunkLoadError" ||
+    /ChunkLoadError|Failed to load chunk|Loading chunk \S+ failed/i.test(
+      error?.message || ""
+    )
+  );
+}
+
+async function importLeaflet() {
+  try {
+    return await import("leaflet");
+  } catch (error) {
+    if (!isChunkLoadError(error)) {
+      throw error;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    return import("leaflet");
+  }
+}
 
 function TravelMap(props) {
   const {
@@ -17,6 +39,7 @@ function TravelMap(props) {
   } = props;
   const mapRef = useRef(null);
   const leafletMapRef = useRef(null);
+  const [mapLoadFailed, setMapLoadFailed] = useState(false);
   const router = useRouter();
   const mapLabel =
     ariaLabel ||
@@ -28,11 +51,27 @@ function TravelMap(props) {
     let isMounted = true;
 
     async function loadMap() {
-      const L = await import("leaflet");
+      let L;
+
+      try {
+        L = await importLeaflet();
+      } catch (error) {
+        if (isMounted) {
+          setMapLoadFailed(true);
+        }
+
+        if (!isChunkLoadError(error)) {
+          console.error("Failed to load Leaflet map.", error);
+        }
+
+        return;
+      }
 
       if (!isMounted || !mapRef.current || leafletMapRef.current || places.length === 0) {
         return;
       }
+
+      setMapLoadFailed(false);
 
       const map = L.map(mapRef.current, {
         dragging: interactive,
@@ -105,11 +144,14 @@ function TravelMap(props) {
   }, [focused, interactive, places, router]);
 
   return (
-    <div
-      ref={mapRef}
-      className={`${classes.mapCanvas} ${className}`}
-      aria-label={mapLabel}
-    />
+    <div className={`${classes.mapFrame} ${className}`}>
+      <div ref={mapRef} className={classes.mapCanvas} aria-label={mapLabel} />
+      {mapLoadFailed && (
+        <p className={classes.mapFallback} role='status'>
+          Map unavailable. Refresh the page to try again.
+        </p>
+      )}
+    </div>
   );
 }
 

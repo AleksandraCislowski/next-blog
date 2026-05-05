@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import classes from "../../styles/loading-image.module.css";
 
@@ -11,7 +11,20 @@ function LoadingImage(props) {
     style,
     ...imageProps
   } = props;
+  const imageRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(false);
+  }, [imageProps.src]);
+
+  useEffect(() => {
+    const image = imageRef.current;
+
+    if (image?.complete && image.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [imageProps.src]);
 
   function handleLoad(event) {
     setIsLoaded(true);
@@ -27,6 +40,7 @@ function LoadingImage(props) {
         {...imageProps}
         alt={alt}
         className={className}
+        ref={imageRef}
         priority={priority}
         onLoad={handleLoad}
         style={{

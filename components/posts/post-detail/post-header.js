@@ -51,7 +51,6 @@ function PostHeader(props) {
             alt={title}
             fill
             priority
-            quality={82}
             sizes='(min-width: 1200px) 38rem, (min-width: 1024px) 46vw, (min-width: 768px) 84vw, 90vw'
             style={imagePosition ? { objectPosition: imagePosition } : undefined}
           />
