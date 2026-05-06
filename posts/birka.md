@@ -1,7 +1,7 @@
 ---
 title: 'Birka'
 date: '2024-07-30'
-addedDate: '2026-05-05'
+addedDate: '2026-05-06'
 image: birka1.jpg
 city: Birka
 country: Sweden
