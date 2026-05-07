@@ -93,7 +93,6 @@ async function optimizeImage(filePath, options) {
   const input = await fs.readFile(filePath);
   const extension = path.extname(filePath).toLowerCase();
   let transformer = sharp(input, { failOn: "none" })
-    .rotate()
     .resize({
       width: options.max,
       height: options.max,
