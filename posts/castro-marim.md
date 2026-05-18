@@ -1,7 +1,7 @@
 ---
-title: "Castro Marim"
-date: "2023-01-02"
-addedDate: "2023-01-03"
+title: 'Castro Marim'
+date: '2023-01-02'
+addedDate: '2023-01-03'
 image: castro1.jpg
 city: Castro Marim
 country: Portugal
@@ -75,15 +75,11 @@ Then the town softens again with small details like this mural. Castro Marim is 
 
 The longer I walked, the more the town became about color. Castro Marim has the expected whitewashed houses, but they are rarely just white. They come with red borders, yellow walls, blue trim, green shutters, patterned tiles, and old stone worked into newer facades.
 
-![Municipal market entrance in Castro Marim](castro13.JPG)
-
-The municipal market is a good example of that everyday design. The facade is practical, but the blue tiles, arched glass, benches, trees, and patterned pavement make the square feel considered. It is the kind of building that belongs to daily life, not just to visitors with cameras.
-
 ![Red and white street facade in Castro Marim](castro14.JPG)
 
 Some streets have a more decorative rhythm. This red-and-white facade, with its repeating curves and trim, felt almost graphic against the plain modern building behind it. Castro Marim is full of these small contrasts: old forms beside new ones, ornament beside simplicity.
 
-![Yellow house with green shutters and stone details](castro15.JPG)
+![Yellow house with green shutters and stone details](castro13.JPG)
 
 The yellow houses were my favorite color note. They make the town feel warmer and more domestic after the exposed fort walls. Green shutters, stone bases, tiled little awnings, and overhanging branches turn a short street into a whole little scene.
 
