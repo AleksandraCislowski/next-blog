@@ -2,7 +2,7 @@
 title: "Vila Real de Santo António"
 date: "2023-01-02"
 addedDate: "2023-01-03"
-image: vila1.JPG
+image: vila1.jpg
 city: Vila Real de Santo António
 country: Portugal
 region: Algarve
