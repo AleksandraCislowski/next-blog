@@ -1,6 +1,6 @@
 ---
 title: 'Linköping'
-date: '2025-10-21'
+date: '2025-09-14'
 addedDate: '2026-04-21'
 image: linkoping1.jpg
 city: Linköping
