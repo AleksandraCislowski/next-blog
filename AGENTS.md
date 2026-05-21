@@ -17,9 +17,9 @@ These rules are mandatory when working on travel posts in this repository.
 - Never auto-rotate images.
 - Never normalize image orientation.
 - Never “fix” image orientation based on how it appears in a preview tool.
-- Do not run image tooling that can change orientation unless the script has a hard guard that refuses unsafe files.
-- If an image appears rotated, report the issue and ask the user to replace the source file. Do not repair it by rotating or transforming it.
-- Treat EXIF orientation as dangerous for this workflow. The optimizer must refuse images that depend on non-neutral EXIF orientation.
+- The image optimizer should process every image in the target post folder.
+- Do not add EXIF-orientation refusal logic to the optimizer.
+- If an image appears rotated after optimization, report it to the user. Do not repair it by rotating or transforming it unless the user explicitly asks.
 
 ## Captions And Paragraphs
 
@@ -36,4 +36,4 @@ These rules are mandatory when working on travel posts in this repository.
 - Check markdown image usage with `rg -o "[slug][0-9]+\\.jpg" posts/[slug].md | sort -V | uniq -c`.
 - Confirm every image appears exactly once, including the cover.
 - Run `npm run build`.
-- Report any image orientation or missing-file issue explicitly.
+- Report any missing-file issue explicitly.
