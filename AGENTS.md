@@ -14,8 +14,8 @@ These rules are mandatory when working on travel posts in this repository.
 ## Image Safety
 
 - Never rotate images.
-- Never auto-rotate images.
-- Never normalize image orientation.
+- Never manually rotate images based on how they look in a preview tool.
+- The optimizer should apply EXIF orientation during processing so optimized files display the same way as the source files.
 - Never “fix” image orientation based on how it appears in a preview tool.
 - The image optimizer should process every image in the target post folder.
 - Do not add EXIF-orientation refusal logic to the optimizer.
