@@ -23,6 +23,11 @@ These rules are mandatory when working on travel posts in this repository.
 
 ## Captions And Paragraphs
 
+- Captions must be mapped to the exact image filename they describe. Do not write captions from memory or from an assumed sequence.
+- When reviewing images, keep a filename-to-visible-content mapping for every file before editing the markdown.
+- The cover image still needs its own visible-content note for verification, even though it must not be repeated in the markdown body.
+- Never shift captions because the cover image is omitted from the body. For example, if `image: slug1.jpg` is the cover, the first markdown image `slug2.jpg` must be captioned from `slug2.jpg`, not from `slug1.jpg`.
+- Before finishing caption edits, compare every markdown image line against the actual file with the same filename and confirm the caption describes that file.
 - Captions must describe what is actually visible in the image.
 - Do not identify a building, monument, object, or place by name unless it is certain from the image or the user supplied that information.
 - Avoid confident but unverified names like cathedral, hall, square, market, or monument unless the visual/context makes it certain.
