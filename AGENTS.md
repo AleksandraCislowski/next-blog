@@ -5,16 +5,27 @@ These rules are mandatory when working on travel posts in this repository.
 ## New Post Workflow
 
 - Use every image file in `public/images/posts/[slug]/`.
+- Never change the cover image unless the user explicitly asks for a different cover. The cover must stay exactly as selected by the user/frontmatter, including the exact filename.
 - The cover image from frontmatter `image:` counts as used.
 - Do not repeat the cover image inside the markdown body.
 - Every image file in the post folder must be referenced exactly once: either as the cover or as a markdown image.
 - Never remove or skip images because they look similar. Similar images are still intentional unless the user explicitly says to remove them.
 - Before finishing, verify that the folder image list equals the markdown image references plus the cover image.
 
+## Filename Safety
+
+- Never rename image files unless the user explicitly asks for that exact rename.
+- Never change image filename capitalization or extension capitalization. For example, `.JPG` must remain `.JPG`; `.jpg` must remain `.jpg`.
+- Never normalize filenames for convenience, tooling, consistency, sorting, or aesthetics.
+- Markdown references, frontmatter, layout config, and any helper mappings must use the exact filename as it exists on disk.
+- If a filename case or extension case looks inconsistent, keep it unchanged and report it instead of modifying it.
+
 ## Image Safety
 
 - Never rotate images.
 - Never manually rotate images based on how they look in a preview tool.
+- Never run the image optimizer unless the user explicitly asks to optimize images.
+- Never optimize images as part of creating, editing, checking, or finishing a post unless the user explicitly requested image optimization in that task.
 - The optimizer should apply EXIF orientation during processing so optimized files display the same way as the source files.
 - Never “fix” image orientation based on how it appears in a preview tool.
 - The image optimizer should process every image in the target post folder.
