@@ -34,9 +34,11 @@ These rules are mandatory when working on travel posts in this repository.
 
 ## Captions And Paragraphs
 
+- Travel post content, headings, captions, excerpts, tags, and frontmatter text must be written in English unless the user explicitly asks for another language. The user may give instructions in Polish; do not copy Polish phrasing into the post unless explicitly requested.
 - Captions must be mapped to the exact image filename they describe. Do not write captions from memory or from an assumed sequence.
 - When reviewing images, keep a filename-to-visible-content mapping for every file before editing the markdown.
 - The cover image still needs its own visible-content note for verification, even though it must not be repeated in the markdown body.
+- The cover image from frontmatter does not get a visible markdown caption unless it is explicitly inserted into the body, which is normally forbidden. The first visible markdown caption must describe the first markdown image filename, not the cover.
 - Never shift captions because the cover image is omitted from the body. For example, if `image: slug1.jpg` is the cover, the first markdown image `slug2.jpg` must be captioned from `slug2.jpg`, not from `slug1.jpg`.
 - Before finishing caption edits, compare every markdown image line against the actual file with the same filename and confirm the caption describes that file.
 - Captions must describe what is actually visible in the image.
