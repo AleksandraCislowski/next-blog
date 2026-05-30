@@ -3,7 +3,10 @@ import Head from "next/head";
 import TravelMap from "../../maps/travel-map";
 import LoadingImage from "../../ui/loading-image";
 import { getCountryFlagBackground } from "../../../lib/country-flags";
-import { getPostImagePosition } from "../../../lib/post-image-positions";
+import {
+  getPostImageLayout,
+  getPostImagePosition,
+} from "../../../lib/post-image-positions";
 import classes from "../../../styles/post-header.module.css";
 
 function PostHeader(props) {
@@ -17,6 +20,9 @@ function PostHeader(props) {
   const place = [location?.city, location?.country].filter(Boolean).join(", ");
   const countryFlagBackground = getCountryFlagBackground(location?.country);
   const imagePosition = getPostImagePosition(post.slug, post.image);
+  const imageLayout = getPostImageLayout(post.slug, post.image);
+  const imageClassName =
+    imageLayout === "portrait" ? `${classes.image} ${classes.imagePortrait}` : classes.image;
   const visibleTags = tags?.slice(0, 4) || [];
   const mapPlaces = useMemo(() => [post], [post]);
   const fieldNotes = [
@@ -45,7 +51,7 @@ function PostHeader(props) {
           <p className={classes.kicker}>{place || "Travel note"}</p>
           <h1>{title}</h1>
         </div>
-        <div className={classes.image}>
+        <div className={imageClassName}>
           <LoadingImage
             src={imagePath}
             alt={title}

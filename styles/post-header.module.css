@@ -163,6 +163,12 @@
   object-position: center center;
 }
 
+.imagePortrait {
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+  width: min(100%, 28rem);
+}
+
 .mapPanel {
   display: grid;
   gap: var(--size-2);
@@ -208,6 +214,11 @@
   .image {
     aspect-ratio: 21 / 10;
     margin: var(--size-2) 0 var(--size-3);
+  }
+
+  .imagePortrait {
+    aspect-ratio: 3 / 4;
+    width: min(100%, 28rem);
   }
 
   .details {
@@ -257,6 +268,11 @@
     grid-row: 1 / span 2;
     align-self: center;
     aspect-ratio: 16 / 10;
+  }
+
+  .imagePortrait {
+    aspect-ratio: 3 / 4;
+    max-height: 36rem;
   }
 
   .mapPanel {
