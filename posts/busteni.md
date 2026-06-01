@@ -1,6 +1,6 @@
 ---
 title: 'Bușteni'
-date: '2026-06-01'
+date: '2026-05-11'
 addedDate: '2026-06-01'
 image: busteni1.jpg
 city: Bușteni
