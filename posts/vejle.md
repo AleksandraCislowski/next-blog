@@ -18,7 +18,7 @@ tags:
   - waterfront
   - slow travel
 excerpt: A summer walk through Vejle, where brick streets, playful details, quiet water, and bold waterfront architecture made the city feel both practical and surprising.
-isFeatured: false
+isFeatured: true
 ---
 
 I had not planned to visit Vejle at all. It was supposed to be only a transfer on the way from Billund to Copenhagen, and at first I was not especially excited about stopping there. In the end, I did not regret it.
